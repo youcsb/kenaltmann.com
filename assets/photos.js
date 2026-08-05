@@ -184,6 +184,7 @@ window.KA = {
         { t: "Joey No. 9", s: "images/animals/10 - Joey No. 9.jpg", w: 1800, h: 1200 },
         { t: "Murray No. 7, B and W", s: "images/animals/11 - Murray No. 7, B and W.jpg", w: 1800, h: 1199 },
         { t: "Joey No. 1, B and W", s: "images/animals/12 - Joey No. 1, B and W.jpg", w: 1200, h: 1800 },
+        { t: "Test Upload", s: "images/animals/13 - Test Upload.jpg", w: 1800, h: 1200 },
       ]
     },
   }
