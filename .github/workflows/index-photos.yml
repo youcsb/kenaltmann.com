@@ -1,0 +1,45 @@
+# Regenerate assets/photos.js whenever photographs change.
+#
+# The site reads assets/photos.js, not the images folder directly. Without this,
+# a photo added through the GitHub web interface would upload but never appear.
+# This runs the same indexer you'd run locally, then commits the result.
+
+name: Index photos
+
+on:
+  push:
+    paths:
+      - 'images/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: index-photos
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Rebuild photos.js
+        run: python3 tools/index-photos.py
+
+      - name: Commit if it changed
+        run: |
+          if git diff --quiet -- assets/photos.js; then
+            echo "No change to photos.js."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/photos.js
+          git commit -m "Reindex photographs [skip ci]"
+          git push
