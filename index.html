@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ken Altmann Photography</title>
+<meta name="description" content="Photographs by Ken Altmann — landscapes, urbanscapes, seascapes, travel, people and animals, made in Seattle and the long way around.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400..700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="home">
+
+<a class="skip" href="#main">Skip to the photographs</a>
+
+<main id="main">
+
+  <!-- The hero is one photograph. Nothing else needs to argue the case. -->
+  <section class="hero">
+    <img class="hero-img"
+         src="images/urbanscapes/02 - Seattle Nights.jpg"
+         alt="The Space Needle and Mount Rainier at sunset over the Seattle skyline"
+         width="1800" height="1200"
+         fetchpriority="high" decoding="async">
+
+    <div class="hero-label">
+      <p class="mono">Ken Altmann &nbsp;·&nbsp; Seattle, Washington</p>
+      <h1 class="headline hero-title">The view of the world<br>through my lens</h1>
+      <p class="mono hero-meta">
+        <span>Seattle Nights</span>
+        <span class="dot">·</span>
+        <span>Urbanscapes</span>
+        <span class="dot">·</span>
+        <span>141 photographs in seven collections</span>
+      </p>
+    </div>
+
+    <p class="mono scroll-cue">Scroll</p>
+  </section>
+
+  <!-- Ken's own words, kept as he wrote them. -->
+  <section class="statement wrap">
+    <div class="statement-aside">
+      <span class="mono">How this started</span>
+      <span class="mono">Seattle, Washington</span>
+    </div>
+    <div>
+      <p class="statement-body">
+        It all started when my wife, Hillary, and I went on our one year honeymoon
+        around the world. We only had room to carry the packs on our back, and so
+        our souvenirs were the photos we took along the way.
+      </p>
+      <p class="statement-body">
+        <em>Since that trip I have only gotten more serious about the art of
+        photography. I am happy to say it is my number one passion in life.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- Collections. Move down the list; the photograph keeps up. -->
+  <section class="index wrap" aria-labelledby="collections-heading">
+    <div class="index-head">
+      <h2 class="mono" id="collections-heading">The collections</h2>
+      <span class="mono">Seven rooms</span>
+    </div>
+    <div data-index></div>
+  </section>
+
+  <!-- A few frames from across the archive. -->
+  <section class="index index--tight wrap" aria-labelledby="selected-heading">
+    <div class="index-head">
+      <h2 class="mono" id="selected-heading">Selected work</h2>
+      <span class="mono">Two from each collection</span>
+    </div>
+  </section>
+  <div class="hang wrap" data-selected></div>
+
+</main>
+
+<div data-footer></div>
+
+<script src="assets/photos.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

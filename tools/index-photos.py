@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""
+Rebuild assets/photos.js from whatever is sitting in the images/ folders.
+
+Run this after you add, remove, rename, or reorder photos:
+
+    python3 tools/index-photos.py
+
+How the folders work
+--------------------
+images/<collection>/NN - Title.jpg
+
+  <collection>   one of the folders listed in COLLECTIONS below
+  NN             two digits, controls the order photos appear on the page
+  Title          becomes the caption under the photo, exactly as typed
+
+So "images/landscapes/04 - Horseshoe Bend.jpg" shows up fourth in Landscapes,
+captioned "Horseshoe Bend". Rename the file, rerun this, and the site updates.
+The number prefix is optional — files without one sort to the end alphabetically.
+
+No dependencies. Reads JPEG and PNG dimensions straight from the file header.
+"""
+
+import json
+import os
+import re
+import struct
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+IMAGES = os.path.join(ROOT, "images")
+OUTPUT = os.path.join(ROOT, "assets", "photos.js")
+
+# Order here is the order collections appear in the nav and on the home page.
+# To add a collection: add a line here, make images/<slug>/, and copy one of
+# the gallery pages (e.g. landscapes.html) to <slug>.html.
+COLLECTIONS = [
+    ("new-and-fresh", "New & Fresh",
+     "The newest frames, before they settle into a collection."),
+    ("urbanscapes", "Urbanscapes",
+     "Cities after dark — Seattle, San Francisco, and one bridge in Dublin."),
+    ("landscapes", "Landscapes",
+     "Rainier at sunrise, the Utah slot canyons, Kauai under stars."),
+    ("seascapes", "Seascapes",
+     "Long exposures, held open until the water goes soft."),
+    ("travel", "Travel",
+     "One year, one backpack, and whatever the light was doing."),
+    ("people", "People",
+     "Family, weddings, and people met along the way."),
+    ("animals", "Animals",
+     "Joey and Murray up close, and a few made from further back."),
+]
+
+EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp")
+
+
+def jpeg_size(fh):
+    fh.seek(2)
+    while True:
+        marker = fh.read(2)
+        if len(marker) < 2 or marker[0] != 0xFF:
+            return None
+        code = marker[1]
+        (length,) = struct.unpack(">H", fh.read(2))
+        # Start-of-frame markers carry the dimensions.
+        if code in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7,
+                    0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF):
+            fh.read(1)
+            height, width = struct.unpack(">HH", fh.read(4))
+            return width, height
+        fh.seek(length - 2, os.SEEK_CUR)
+
+
+def png_size(fh):
+    fh.seek(16)
+    width, height = struct.unpack(">II", fh.read(8))
+    return width, height
+
+
+def webp_size(fh):
+    fh.seek(12)
+    chunk = fh.read(4)
+    if chunk == b"VP8X":
+        fh.seek(24)
+        raw = fh.read(6)
+        width = (raw[0] | raw[1] << 8 | raw[2] << 16) + 1
+        height = (raw[3] | raw[4] << 8 | raw[5] << 16) + 1
+        return width, height
+    if chunk == b"VP8L":
+        fh.seek(21)
+        bits = struct.unpack("<I", fh.read(4))[0]
+        return (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+    if chunk == b"VP8 ":
+        fh.seek(26)
+        width, height = struct.unpack("<HH", fh.read(4))
+        return width & 0x3FFF, height & 0x3FFF
+    return None
+
+
+def dimensions(path):
+    """Return (width, height), or a 3:2 guess if the header can't be read."""
+    try:
+        with open(path, "rb") as fh:
+            head = fh.read(4)
+            if head[:2] == b"\xff\xd8":
+                return jpeg_size(fh) or (2400, 1600)
+            if head == b"\x89PNG":
+                return png_size(fh)
+            if head == b"RIFF":
+                return webp_size(fh) or (2400, 1600)
+    except Exception as err:
+        print(f"  could not read size of {os.path.basename(path)}: {err}")
+    return (2400, 1600)
+
+
+def sort_key(filename):
+    match = re.match(r"^\s*(\d+)\s*[-_.]\s*", filename)
+    return (0, int(match.group(1)), filename) if match else (1, 0, filename.lower())
+
+
+def title_from(filename):
+    stem = os.path.splitext(filename)[0]
+    return re.sub(r"^\s*\d+\s*[-_.]\s*", "", stem).strip() or "Untitled"
+
+
+def read_collection(slug):
+    folder = os.path.join(IMAGES, slug)
+    if not os.path.isdir(folder):
+        print(f"  images/{slug}/ not found — skipping")
+        return []
+    names = [n for n in os.listdir(folder)
+             if n.lower().endswith(EXTENSIONS) and not n.startswith(".")]
+    photos = []
+    for name in sorted(names, key=sort_key):
+        width, height = dimensions(os.path.join(folder, name))
+        photos.append({
+            "t": title_from(name),
+            "s": f"images/{slug}/{name}",
+            "w": width,
+            "h": height,
+        })
+    return photos
+
+
+def main():
+    if not os.path.isdir(IMAGES):
+        print(f"No images folder at {IMAGES}")
+        return 1
+
+    lines = [
+        "// Generated by tools/index-photos.py — do not edit by hand.",
+        "// Add or rename files in images/<collection>/ and run the script again.",
+        "window.KA = {",
+        "  order: " + json.dumps([slug for slug, _, _ in COLLECTIONS]) + ",",
+        "  collections: {",
+    ]
+
+    total = 0
+    for slug, name, blurb in COLLECTIONS:
+        photos = read_collection(slug)
+        total += len(photos)
+        print(f"  {name}: {len(photos)} photographs")
+        lines.append(f"    {json.dumps(slug)}: {{")
+        lines.append(f"      name: {json.dumps(name)},")
+        lines.append(f"      blurb: {json.dumps(blurb)},")
+        lines.append("      photos: [")
+        for photo in photos:
+            lines.append(
+                f'        {{ t: {json.dumps(photo["t"])}, '
+                f's: {json.dumps(photo["s"])}, '
+                f'w: {photo["w"]}, h: {photo["h"]} }},'
+            )
+        lines.append("      ]")
+        lines.append("    },")
+
+    lines += ["  }", "};", ""]
+
+    os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
+    with open(OUTPUT, "w") as fh:
+        fh.write("\n".join(lines))
+
+    print(f"\nWrote {total} photographs to assets/photos.js")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
