@@ -70,7 +70,7 @@ window.KA = {
         { t: "Sands of Time", s: "images/landscapes/16 - Sands of Time.jpg", w: 1305, h: 1800 },
         { t: "Out for a Stroll", s: "images/landscapes/17 - Out for a Stroll.jpg", w: 1138, h: 1800 },
         { t: "Colorful Slots", s: "images/landscapes/18 - Colorful Slots.jpg", w: 1200, h: 1800 },
-        { t: "New Zealand Blue Pull Out", s: "images/landscapes/19 - New Zealand Blue Pull Out.jpg", w: 5184, h: 2579 },
+        { t: "New Zealand Blue Pull Out", s: "images/landscapes/19 - New Zealand Blue Pull Out.jpg", w: 1800, h: 895 },
       ]
     },
     "seascapes": {
