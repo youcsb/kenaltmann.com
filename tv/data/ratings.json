@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T02:41:07.356Z",
+ "updatedAt": "2026-11-14T02:41:14.954Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -124,7 +124,7 @@
    "seasonsSeen": 5
   },
   "fleabag": {
-   "at": "2026-11-13T16:00:00-08:00",
+   "at": "2026-11-14T02:41:13.462Z",
    "rating": 5,
    "state": "watched",
    "t": {
@@ -141,7 +141,8 @@
     "title": "Fleabag",
     "type": "Series",
     "year": 2016
-   }
+   },
+   "seasonsSeen": 2
   },
   "friday-night-lights": {
    "at": "2026-11-13T16:00:00-08:00",
