@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T01:26:59.603Z",
+ "updatedAt": "2026-11-14T02:26:48.766Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -765,6 +765,26 @@
     "best": "A quiet, moving nature story and an Oscar winner."
    },
    "rating": 4
+  },
+  "glass-onion": {
+   "state": "watched",
+   "at": "2026-11-14T02:26:47.188Z",
+   "t": {
+    "title": "Glass Onion",
+    "service": "Netflix",
+    "type": "Movie",
+    "year": 2022,
+    "genre": "Comedy",
+    "tags": [
+     "mystery",
+     "ensemble",
+     "feel-good"
+    ],
+    "critics": 92,
+    "audience": null,
+    "best": "A crowd-pleasing whodunit for a Friday night."
+   },
+   "rating": 3
   }
  }
 }
