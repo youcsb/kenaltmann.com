@@ -149,6 +149,19 @@ footer{color:var(--dim);font-size:12px;max-width:80ch;padding-bottom:40px}
 .lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 #tok{width:100%;font:500 16px var(--f);padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 .status{margin:0;font-size:13px;color:var(--muted);min-height:1.3em}
+.add-art{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;background:transparent;border:2px dashed rgba(255,255,255,.22);box-shadow:none}
+.add-art span{font-size:44px;line-height:1;font-weight:300;color:var(--ink)}
+.add-art b{font-size:14px}
+.add-art small{font-size:11px;color:var(--dim);line-height:1.3}
+.field{width:100%;font:500 16px var(--f);padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.add-form .lbl{margin-bottom:-8px}
+.add-form .lbl small{text-transform:none;letter-spacing:0;font-weight:500;color:var(--dim)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg label{cursor:pointer}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:inline-block;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--raise2);font-weight:600;font-size:14px}
+.seg input:checked+span{background:var(--ink);color:#0A0B0F}
+.seg input:focus-visible+span{outline:2px solid var(--ink);outline-offset:2px}
 @media(display-mode:standalone){.bar{padding-top:calc(14px + env(safe-area-inset-top,0px))}}
 @media(max-width:640px){.bar{position:relative;top:0;gap:10px 16px}.svcs{margin-left:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%;order:3;width:100%}.svcs::-webkit-scrollbar{display:none}.svc-chip{flex:0 0 auto}.sync{order:2;margin-left:auto}.tabs{order:4;width:100%}.hero{margin-top:0}}
 </style>
@@ -234,7 +247,7 @@ function tile(t,opts={}){const m=state.marks[t.id];const img=artOf(t.id);const s
     <div class="tile-t">${esc(t.title)}</div>${opts.sub?`<div class="tile-s">${opts.sub}</div>`:""}</button>`}
 function shelf(id,title,sub,list,opts={}){if(!list.length&&!opts.keep)return"";
   return `<section class="shelf" id="${id}"><h2 class="gut">${esc(title)}${sub?` <small>${esc(sub)}</small>`:""}</h2>
-  <div class="row gut">${list.length?list.map(t=>tile(t,opts.tile?opts.tile(t):{})).join(""):`<div class="empty-row">${esc(opts.empty||"")}</div>`}</div></section>`}
+  <div class="row gut">${(opts.lead||"")+(list.length?list.map(t=>tile(t,opts.tile?opts.tile(t):{})).join(""):`<div class="empty-row">${esc(opts.empty||"")}</div>`)}</div></section>`}
 
 /* ---------- render ---------- */
 function render(){
@@ -243,7 +256,7 @@ function render(){
   const taste=buildTaste(),useT=taste.votes>=2;
   const mk=t=>useT?matchOf(t,taste):{score:best(t),taste:0,pct:null,why:null};
   const hidden=t=>{const s=state.marks[t.id]?.state;return s==="watched"||s==="skip"};
-  const pool=f.titles.filter(t=>state.svc.has(t.service)&&!hidden(t));
+  const pool=f.titles.filter(t=>state.svc.has(t.service)&&!hidden(t)&&!(t.manual&&best(t)<90));
   const scored=pool.map(t=>({t,m:mk(t)})).sort((a,b)=>b.m.score-a.m.score||a.t.title.localeCompare(b.t.title));
   const ranked=scored.map(x=>x.t);
 
@@ -267,7 +280,10 @@ function render(){
   const sub=t=>{const m=mk(t);return{sub:m.pct&&useT?`<span style="color:var(--fresh);font-weight:700">${m.pct}% match</span> · ${esc(t.service)}`:esc(t.service)}};
   let html="";
   html+=shelf("for-you",useT?"Top picks for you":"Top picks","Ranked by your ratings + Rotten Tomatoes",ranked.filter(t=>t!==heroX?.t).slice(0,16),{tile:sub});
-  html+=shelf("my-list","My List","",ranked.filter(t=>state.marks[t.id]?.state==="want"),{keep:true,empty:"Tap + My List on anything to save it here.",tile:sub});
+  const inRanked=new Set(ranked.map(t=>t.id));
+  const myList=[...ranked.filter(t=>state.marks[t.id]?.state==="want"),...Object.entries(state.marks).filter(([id,m])=>m.state==="want"&&!inRanked.has(id)).map(([id])=>lookup(id)).filter(Boolean)];
+  const addTile=`<button class="tile" data-action="add-title" aria-label="Add a title to My List"><div class="art add-art"><span aria-hidden="true">+</span><b>Add a title</b><small>Someone told you to watch something?</small></div><div class="tile-t">Add a title</div></button>`;
+  html+=shelf("my-list","My List",myList.length?`${myList.length} saved`:"",myList,{keep:true,lead:addTile,empty:"",tile:t=>{const r=state.marks[t.id]?.t?.recommendedBy;return r?{sub:"From "+esc(r)}:sub(t)}});
   // "Because you loved X" rows
   if(useT){const loved=Object.entries(state.marks).filter(([,m])=>m.rating===5&&m.t).map(([id,m])=>({id,...m.t}));
     const used=new Set();const rows=[];
@@ -315,7 +331,7 @@ function openSheet(id,refresh){const t=lookup(id);if(!t)return;if(!refresh)lastF
    <div class="sheet-body"><p>${esc(t.best)}</p>
      ${mt?.why?`<div class="why">Because you loved <b>${esc(mt.why)}</b></div>`:""}
      <div class="chips">${[t.genre,...(t.tags||[])].map(x=>`<span class="chip">${esc(String(x).replace(/-/g," "))}</span>`).join("")}${t.added?`<span class="chip">New ${fmtShort(t.added)}</span>`:""}${t.leaving?`<span class="chip" style="color:var(--warn)">${esc(t.leavingNote||"Leaving soon")}</span>`:""}</div>
-     <div class="btns">${sv?`<a class="btn pri" href="${sv.u+encodeURIComponent(t.title)}" target="_blank" rel="noopener">Open in ${esc(t.service)}</a>`:""}
+     <div class="btns">${sv?`<a class="btn pri" href="${sv.u+encodeURIComponent(t.title)}" target="_blank" rel="noopener">Open in ${esc(t.service)}</a>`:`<a class="btn pri" href="https://www.justwatch.com/us/search?q=${encodeURIComponent(t.title)}" target="_blank" rel="noopener">Find where to watch</a>`}
        <button class="btn sec" data-id="${id}" data-mark="want" aria-pressed="${m?.state==="want"}">${m?.state==="want"?"✓ On My List":"+ My List"}</button>
        <button class="btn sec" data-id="${id}" data-mark="watched" aria-pressed="${m?.state==="watched"}">${m?.state==="watched"?"✓ Watched":"I've seen it"}</button>
        <button class="btn sec" data-id="${id}" data-mark="skip" aria-pressed="${m?.state==="skip"}">${m?.state==="skip"?"Passed":"Not for me"}</button></div>
@@ -380,7 +396,40 @@ function openSettings(){state.open=null;lastFocus=document.activeElement;
    <div class="btns"><button class="btn pri" data-action="save-token">Connect</button>${token?'<button class="btn ghost" data-action="forget-token">Disconnect this device</button>':""}</div>
   </div>`;
   $("scrim").hidden=false;$("tok").focus()}
+function openAddForm(){state.open=null;lastFocus=document.activeElement;
+  $("sheet").innerHTML=`<button class="close" id="close" aria-label="Close">✕</button>
+  <form class="sheet-body add-form" id="addf" style="padding-top:28px" autocomplete="off">
+   <h2 id="sheet-title" style="margin:0">Add to My List</h2>
+   <p>Got a recommendation? Save it here. Each morning Claude looks it up, adds the score, service and poster, and uses it to tune your picks.</p>
+   <label class="lbl" for="add-title">Title</label>
+   <input id="add-title" class="field" required placeholder="e.g. The Pitt" enterkeyhint="done">
+   <span class="lbl">It's a</span>
+   <div class="seg" role="radiogroup" aria-label="Type">${["Series","Movie","Documentary"].map((v,i)=>`<label><input type="radio" name="add-type" value="${v}" ${i===0?"checked":""}><span>${v==="Series"?"Show":v}</span></label>`).join("")}</div>
+   <label class="lbl" for="add-svc">Where to watch</label>
+   <select id="add-svc" class="field"><option value="">Not sure, Claude will find it</option>${Object.keys(SVC).map(s=>`<option>${s}</option>`).join("")}<option value="Other">Somewhere else</option></select>
+   <label class="lbl" for="add-who">Who recommended it? <small>(optional)</small></label>
+   <input id="add-who" class="field" placeholder="e.g. Sarah">
+   <label class="lbl" for="add-note">Note <small>(optional)</small></label>
+   <input id="add-note" class="field" placeholder="e.g. Start with season 2">
+   <p class="status" id="add-status"></p>
+   <div class="btns"><button class="btn pri" type="submit">Add to My List</button></div>
+  </form>`;
+  $("scrim").hidden=false;$("add-title").focus()}
+function saveManual(){const title=$("add-title").value.trim();if(!title){$("add-status").textContent="Type a title first.";return}
+  const type=(document.querySelector('input[name="add-type"]:checked')||{}).value||"Series";
+  const svc=$("add-svc").value,who=$("add-who").value.trim(),note=$("add-note").value.trim();
+  const norm=x=>x.toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+  const existing=state.feed?.titles.find(t=>norm(t.title)===norm(title));
+  const slug=norm(title).replace(/ /g,"-").slice(0,60)||"title";
+  const id=existing?existing.id:"my-"+slug;
+  const base=existing?snap(existing):{title,service:svc||"",type,year:null,genre:type==="Documentary"?"Documentary":"",tags:[],critics:null,audience:null,
+    best:[who?`Recommended by ${who}.`:"Added by you.",note].filter(Boolean).join(" ")};
+  if(who)base.recommendedBy=who; if(note)base.note=note;
+  saveMark(id,{state:"want",at:new Date().toISOString(),manual:!existing,t:base});
+  closeSheet();setTimeout(()=>document.getElementById("my-list")?.scrollIntoView({behavior:"smooth",block:"start"}),50)}
+document.addEventListener("submit",e=>{if(e.target.id==="addf"){e.preventDefault();saveManual()}});
 const actions={
+  "add-title":openAddForm,
   settings:openSettings,
   "save-token":async()=>{const v=$("tok").value.trim();const st=$("tok-status");if(!v){st.textContent="Paste the key first.";return}
     st.textContent="Checking…";try{await readRemote(v);token=v;try{localStorage.setItem(TOKEN_KEY,v)}catch(e){}syncError=null;st.textContent="Connected. Syncing your ratings now.";
