@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T02:43:47.611Z",
+ "updatedAt": "2026-11-14T02:44:03.894Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -815,6 +815,22 @@
     "best": "A funny, violent wasteland adventure. You don't need to know the games."
    },
    "rating": 4
+  },
+  "my-west-wing": {
+   "state": "want",
+   "at": "2026-11-14T02:44:02.440Z",
+   "manual": true,
+   "t": {
+    "title": "West wing",
+    "service": "",
+    "type": "Series",
+    "year": null,
+    "genre": "",
+    "tags": [],
+    "critics": null,
+    "audience": null,
+    "best": "Added by you."
+   }
   }
  }
 }
