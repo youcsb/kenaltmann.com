@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T00:30:00-08:00",
+ "updatedAt": "2026-11-14T01:14:07.124Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -620,6 +620,114 @@
     "type": "Series",
     "year": 2018
    }
+  },
+  "my-bad-monkey": {
+   "state": "want",
+   "at": "2026-11-14T00:49:13.584Z",
+   "manual": true,
+   "t": {
+    "title": "Bad monkey",
+    "service": "Apple TV",
+    "type": "Series",
+    "year": null,
+    "genre": "",
+    "tags": [],
+    "critics": null,
+    "audience": null,
+    "best": "Added by you."
+   }
+  },
+  "my-terminator-2": {
+   "state": "watched",
+   "at": "2026-11-14T00:51:05.925Z",
+   "t": {
+    "title": "Terminator 2",
+    "service": "Prime Video",
+    "type": "Movie",
+    "year": null,
+    "genre": "",
+    "tags": [],
+    "critics": null,
+    "audience": null,
+    "best": "Added by you."
+   },
+   "rating": 5
+  },
+  "the-body": {
+   "state": "skip",
+   "at": "2026-11-14T00:53:39.661Z",
+   "t": {
+    "title": "The Body",
+    "service": "Netflix",
+    "type": "Series",
+    "year": 2026,
+    "genre": "Drama",
+    "tags": [
+     "limited-series",
+     "mystery",
+     "dark"
+    ],
+    "critics": 100,
+    "audience": 98,
+    "best": "The new must-watch: an eight-episode limited series that's #2 on Netflix worldwide."
+   }
+  },
+  "my-the-old-man": {
+   "state": "watched",
+   "at": "2026-11-14T00:59:31.853Z",
+   "t": {
+    "title": "The old man",
+    "service": "Hulu",
+    "type": "Series",
+    "year": null,
+    "genre": "",
+    "tags": [],
+    "critics": null,
+    "audience": null,
+    "best": "Added by you."
+   },
+   "rating": 5
+  },
+  "the-americans": {
+   "state": "watched",
+   "at": "2026-11-14T01:05:07.285Z",
+   "t": {
+    "title": "The Americans",
+    "service": "Hulu",
+    "type": "Series",
+    "year": 2013,
+    "genre": "Drama",
+    "tags": [
+     "spy",
+     "period",
+     "family-saga",
+     "prestige"
+    ],
+    "critics": 96,
+    "audience": null,
+    "best": "KGB spies posing as a suburban DC family. A slow-building marriage drama with Sopranos-level payoff."
+   },
+   "rating": 4
+  },
+  "justified": {
+   "state": "watched",
+   "at": "2026-11-14T01:05:23.862Z",
+   "t": {
+    "title": "Justified",
+    "service": "Hulu",
+    "type": "Series",
+    "year": 2010,
+    "genre": "Drama",
+    "tags": [
+     "crime",
+     "western",
+     "character-study"
+    ],
+    "critics": 90,
+    "audience": null,
+    "best": "A modern-day U.S. Marshal back home in Kentucky. Crime meets western, a natural next watch after Yellowstone."
+   },
+   "rating": 4
   }
  }
 }
