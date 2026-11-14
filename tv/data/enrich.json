@@ -42,6 +42,20 @@
    ],
    "critics": 93,
    "audience": null
+  },
+  "my-west-wing": {
+   "title": "The West Wing",
+   "year": 1999,
+   "type": "Series",
+   "service": "",
+   "genre": "Drama",
+   "tags": [
+    "workplace",
+    "ensemble",
+    "prestige"
+   ],
+   "critics": 96,
+   "audience": null
   }
  }
 }

@@ -107,7 +107,7 @@
   },
   "black-doves-s2": {
    "tvmaze": 68407,
-   "title": "Black Doves",
+   "title": "Black Doves, Season 2",
    "total": 2,
    "seasons": [
     {
@@ -366,6 +366,49 @@
    ],
    "checked": "2026-11-13"
   },
+  "my-west-wing": {
+   "tvmaze": 523,
+   "title": "The West Wing",
+   "total": 7,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 1999,
+     "critics": 96
+    },
+    {
+     "n": 2,
+     "year": 2000,
+     "critics": 88
+    },
+    {
+     "n": 3,
+     "year": 2001,
+     "critics": 73
+    },
+    {
+     "n": 4,
+     "year": 2002,
+     "critics": 92
+    },
+    {
+     "n": 5,
+     "year": 2003,
+     "critics": 65
+    },
+    {
+     "n": 6,
+     "year": 2004,
+     "critics": 64
+    },
+    {
+     "n": 7,
+     "year": 2005,
+     "critics": 95
+    }
+   ],
+   "checked": "2026-11-14"
+  },
   "nobody-wants-this": {
    "tvmaze": 77060,
    "title": "Nobody Wants This",
@@ -403,18 +446,21 @@
     },
     {
      "n": 3,
-     "year": 2023
+     "year": 2023,
+     "critics": 97
     },
     {
      "n": 4,
-     "year": 2024
+     "year": 2024,
+     "critics": 93
     },
     {
      "n": 5,
-     "year": 2025
+     "year": 2025,
+     "critics": 89
     }
    ],
-   "checked": "2026-11-13"
+   "checked": "2026-11-14"
   },
   "ozark": {
    "tvmaze": 13417,
@@ -489,17 +535,21 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2021
+     "year": 2021,
+     "critics": 98
     },
     {
      "n": 2,
-     "year": 2022
+     "year": 2022,
+     "critics": 100
     },
     {
      "n": 3,
-     "year": 2023
+     "year": 2023,
+     "critics": 100
     }
-   ]
+   ],
+   "checked": "2026-11-14"
   },
   "severance": {
    "tvmaze": 44933,
@@ -664,10 +714,11 @@
     },
     {
      "n": 4,
-     "year": 2026
+     "year": 2026,
+     "critics": 89
     }
    ],
-   "checked": "2026-11-13"
+   "checked": "2026-11-14"
   },
   "the-americans": {
    "tvmaze": 157,
@@ -747,7 +798,7 @@
   },
   "the-office-us": {
    "tvmaze": 526,
-   "title": "The Office",
+   "title": "The Office (US)",
    "total": 9,
    "seasons": [
     {

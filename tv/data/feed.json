@@ -1,24 +1,6 @@
 {
  "games": [
   {
-   "channel": "Prime Video",
-   "id": "g1",
-   "league": "NBA",
-   "mine": true,
-   "note": "Two of your teams. NBA Cup game.",
-   "start": "2026-11-13T18:30:00-08:00",
-   "teams": "Warriors at Spurs"
-  },
-  {
-   "channel": "FOX",
-   "id": "g2",
-   "league": "CFB",
-   "mine": true,
-   "note": "UCLA is 9-0 and ranked No. 4. Rose Bowl, Friday night.",
-   "start": "2026-11-13T18:00:00-08:00",
-   "teams": "Illinois at UCLA"
-  },
-  {
    "channel": "CBS",
    "id": "g3",
    "league": "CFB",
@@ -219,9 +201,27 @@
    "channel": "Regional (DAZN)",
    "mine": true,
    "note": "Not on your services."
+  },
+  {
+   "id": "g25",
+   "league": "NFL",
+   "teams": "Steelers at Eagles",
+   "start": "2026-11-22T10:00:00-08:00",
+   "channel": "CBS",
+   "mine": false,
+   "note": "Moved to the early window."
+  },
+  {
+   "id": "g26",
+   "league": "NBA",
+   "teams": "Celtics at Warriors",
+   "start": "2026-11-22T17:30:00-08:00",
+   "channel": "Check listing",
+   "mine": true,
+   "note": "Home game. TV not confirmed yet."
   }
  ],
- "note": "Tuned to your ratings: more propulsive crime and action, fewer slow, heavy dramas.",
+ "note": "Daily refresh: season data for West Wing, Reservation Dogs, Only Murders and Ted Lasso; dropped Glass Onion and Fallout (watched).",
  "titles": [
   {
    "added": "2026-11-05",
@@ -242,7 +242,6 @@
    "year": 2026
   },
   {
-   "added": "2026-11",
    "audience": null,
    "best": "Samara Weaving leads this new film. It scores 90% from 83 critics.",
    "critics": 90,
@@ -255,7 +254,8 @@
    "title": "Carolina Caroline",
    "type": "Movie",
    "verified": true,
-   "year": 2026
+   "year": 2026,
+   "added": "2026-11-06"
   },
   {
    "audience": null,
@@ -290,23 +290,6 @@
    "type": "Series",
    "verified": false,
    "year": 2017
-  },
-  {
-   "audience": null,
-   "best": "A crowd-pleasing whodunit for a Friday night.",
-   "critics": 92,
-   "genre": "Comedy",
-   "id": "glass-onion",
-   "service": "Netflix",
-   "tags": [
-    "mystery",
-    "ensemble",
-    "feel-good"
-   ],
-   "title": "Glass Onion",
-   "type": "Movie",
-   "verified": false,
-   "year": 2022
   },
   {
    "audience": null,
@@ -467,23 +450,6 @@
   },
   {
    "audience": null,
-   "best": "A funny, violent wasteland adventure. You don't need to know the games.",
-   "critics": 94,
-   "genre": "Drama",
-   "id": "fallout",
-   "service": "Prime Video",
-   "tags": [
-    "sci-fi",
-    "action",
-    "dark-comedy"
-   ],
-   "title": "Fallout",
-   "type": "Series",
-   "verified": false,
-   "year": 2024
-  },
-  {
-   "audience": null,
    "best": "Ali, Malcolm X, Jim Brown and Sam Cooke in one room for one night.",
    "critics": 98,
    "genre": "Drama",
@@ -547,7 +513,8 @@
    "title": "Fire of Love",
    "type": "Documentary",
    "verified": false,
-   "year": 2022
+   "year": 2022,
+   "url": "https://www.disneyplus.com/browse/entity-f31479e8-210c-4416-af92-e7590114f56a"
   },
   {
    "audience": null,
@@ -563,7 +530,8 @@
    "title": "The Beatles: Get Back",
    "type": "Documentary",
    "verified": false,
-   "year": 2021
+   "year": 2021,
+   "url": "https://www.disneyplus.com/browse/entity-eaea3ecf-6636-4468-b777-54bb2aee5545"
   },
   {
    "audience": null,
@@ -689,5 +657,5 @@
    "verified": true
   }
  ],
- "updatedAt": "2026-11-13T17:40:00-08:00"
+ "updatedAt": "2026-11-14T05:55:00-08:00"
 }
