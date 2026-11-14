@@ -92,7 +92,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media(max-width:640px){.hero-in{flex-direction:column;align-items:flex-start;gap:20px;padding-top:90px}.hero-poster{width:140px}}
 
 /* Shelves */
-main{display:flex;flex-direction:column;gap:34px;padding-block:8px 64px}
+main{display:flex;flex-direction:column;gap:34px;padding-block:12px 64px}
 .shelf{display:flex;flex-direction:column;gap:12px;scroll-margin-top:80px}
 .shelf h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .shelf h2 small{font-size:13px;font-weight:500;color:var(--dim)}
@@ -191,20 +191,6 @@ footer{color:var(--dim);font-size:12px;max-width:80ch;padding-bottom:40px}
   <button class="sync" id="sync" data-action="settings">Saved on this phone</button>
 </header>
 
-<section class="hero" id="hero" aria-label="Featured">
-  <div class="hero-bg" id="hero-bg"></div>
-  <div class="hero-in gut">
-    <div class="hero-poster" id="hero-poster"></div>
-    <div class="hero-txt">
-      <div class="kicker" id="hero-kick">Loading your lineup</div>
-      <h1 id="hero-title">The 90 Club</h1>
-      <div class="meta" id="hero-meta"></div>
-      <p id="hero-best">Picks from Netflix, Prime Video, Disney+, Hulu and Apple TV that score 90% or higher on Rotten Tomatoes, ranked by what you love.</p>
-      <div class="why" id="hero-why"></div>
-      <div class="btns" id="hero-btns"></div>
-    </div>
-  </div>
-</section>
 
 <main id="main">
   <div class="gut" id="notice-wrap" hidden><div class="notice" id="notice"></div></div>
@@ -294,7 +280,7 @@ function nextSeasons(){const out=[];
     const S=seasonsOf(id);if(!S||S.total<=1)continue;const seen=seenOf(m);if(seen>=S.total)continue;
     const nx=S.seasons.find(x=>x.n===seen+1);const base=lookup(id);if(!nx||!base)continue;
     out.push({t:{...base,critics:nx.critics??null,audience:nx.audience??null},n:nx.n,sc:Math.max(nx.critics??0,nx.audience??0),rating:m.rating||3})}
-  return out.sort((a,b)=>(b.rating-a.rating)||(b.sc-a.sc))}
+  return out.sort((a,b)=>((b.sc>=90)-(a.sc>=90))||(b.rating-a.rating)||(b.sc-a.sc))}
 const seenLabel=(id,m)=>{const S=seasonsOf(id);if(!S||S.total<=1)return"";const n=seenOf(m);return n>=S.total?"All seasons":n===1?"Season 1":`Seasons 1–${n}`};
 /* Search across everything the app knows: the lineup plus every title you've rated, listed or passed on. */
 const normQ=x=>String(x||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
@@ -336,26 +322,10 @@ function render(){if(!$("search").hidden)renderSearch();
   const scored=pool.map(t=>({t,m:mk(t)})).sort((a,b)=>b.m.score-a.m.score||a.t.title.localeCompare(b.t.title));
   const ranked=scored.map(x=>x.t);
 
-  // Hero: best match with art, else best match
-  const heroX=scored.find(x=>artOf(x.t.id)&&x.t.type!=="Documentary")||scored[0];
-  if(heroX){const t=heroX.t,m=heroX.m,img=artOf(t.id),sv=SVC[t.service];
-    $("hero-bg").style.backgroundImage=img?`url("${img}")`:"none";
-    $("hero-poster").style.backgroundImage=img?`url("${img}")`:"none";$("hero-poster").hidden=!img;
-    $("hero-kick").textContent=useT?"Top pick for you":"Top pick tonight";
-    $("hero-title").textContent=t.title;
-    $("hero-meta").innerHTML=[m.pct?`<span class="match">${m.pct}% match</span>`:"",scoreHTML(t),`<span style="color:${svcColor(t.service)};font-weight:700">${esc(t.service)}</span>`,`<span>${t.year}</span>`,`<span>${esc(t.type)}</span>`,`<span>${esc(t.genre)}</span>`].filter(Boolean).join("");
-    $("hero-best").textContent=t.best;
-    $("hero-why").innerHTML=m.why?`Because you loved <b>${esc(m.why)}</b>`:"";
-    const w=state.marks[t.id]?.state==="want";
-    $("hero-btns").innerHTML=`<a class="btn pri" href="${watchUrl(t)}" data-copy="${esc(t.title)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg>Open in ${esc(t.service)}</a>
-      <button class="btn sec" data-id="${t.id}" data-mark="want" aria-pressed="${w}">${w?"✓ On My List":"+ My List"}</button>
-      <button class="btn sec" data-open="${t.id}">Details</button>
-      <button class="btn ghost" data-id="${t.id}" data-mark="skip">Not for me</button>`;}
-
   // Shelves
   const sub=t=>{const m=mk(t);return{sub:m.pct&&useT?`<span style="color:var(--fresh);font-weight:700">${m.pct}% match</span> · ${esc(t.service)}`:esc(t.service)}};
   let html="";
-  html+=shelf("for-you",useT?"Top picks for you":"Top picks","Ranked by your ratings + Rotten Tomatoes",ranked.filter(t=>t!==heroX?.t).slice(0,16),{tile:sub});
+  html+=shelf("for-you",useT?"Top picks for you":"Top picks","Ranked by your ratings + Rotten Tomatoes",ranked.slice(0,16),{tile:t=>({...sub(t),...(t===ranked[0]?{flag:'<span class="flag">#1</span>'}:{})})});
   const ns=nextSeasons().filter(x=>state.svc.has(x.t.service)||!SVC[x.t.service]);
   html+=shelf("next-season","Your next season","The season after the one you've seen, scored on its own",ns.map(x=>x.t),{tile:t=>{const x=ns.find(y=>y.t.id===t.id);
     return{flag:`<span class="flag">S${x.n}</span>`,sub:`Season ${x.n} · `+(x.sc?`${x.sc}%`+(x.sc<90?" (under 90)":""):"score coming")}}});
@@ -535,7 +505,7 @@ const actions={
   "forget-token":()=>{token=null;try{localStorage.removeItem(TOKEN_KEY)}catch(e){}updateSyncUI();closeSheet()}
 };
 /* Self-update: when a newer app version is published, reload once with a cache-busting URL. */
-const APP_VERSION="2026-11-14-search";
+const APP_VERSION="2026-11-14-nohero";
 async function checkUpdate(){try{const v=await fetch("data/version.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json());
   if(v.app&&v.app!==APP_VERSION&&new URLSearchParams(location.search).get("v")!==v.app){location.replace(location.pathname+"?v="+encodeURIComponent(v.app));return true}}catch(e){}return false}
 async function load(){
@@ -547,7 +517,7 @@ async function load(){
     state.feed=feed;state.art=art.map||{};render();
     fetch("data/enrich.json"+bust).then(r=>r.ok?r.json():{titles:{}}).then(d=>{state.enrich=d.titles||{};render()}).catch(()=>{});
     fetch("data/seasons.json"+bust).then(r=>r.ok?r.json():{titles:{}}).then(d=>{state.seasons=d.titles||{};render()}).catch(()=>{})}
-  catch(e){$("hero-kick").textContent="Lineup unavailable";showNotice("Today's lineup didn't load. Check your connection and reopen the app.");return}
+  catch(e){showNotice("Today's lineup didn't load. Check your connection and reopen the app.");return}
   try{const data=token?(await readRemote()).data:await fetch("data/ratings.json"+bust).then(r=>r.json());state.marks=applyPending(data.marks||{});persistLocal();render()}
   catch(e){if(token&&(e.status===401||e.status===403))syncError="auth"}
   updateSyncUI();if(pending.size)scheduleSync()
