@@ -501,7 +501,12 @@ const actions={
     catch(e){st.textContent=e.status===401?"GitHub didn't accept that key. Check you copied all of it.":e.status===404||e.status===403?"That key can't see kenaltmann.com. Give it access to that repository with Contents: Read and write.":"Couldn't reach GitHub. Check your connection and try again."}},
   "forget-token":()=>{token=null;try{localStorage.removeItem(TOKEN_KEY)}catch(e){}updateSyncUI();closeSheet()}
 };
+/* Self-update: when a newer app version is published, reload once with a cache-busting URL. */
+const APP_VERSION="2026-11-14-seasons";
+async function checkUpdate(){try{const v=await fetch("data/version.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json());
+  if(v.app&&v.app!==APP_VERSION&&new URLSearchParams(location.search).get("v")!==v.app){location.replace(location.pathname+"?v="+encodeURIComponent(v.app));return true}}catch(e){}return false}
 async function load(){
+  if(await checkUpdate())return;
   try{const m=JSON.parse(localStorage.getItem("ninety-marks")||"null");if(m)state.marks=m;JSON.parse(localStorage.getItem("ninety-pending")||"[]").forEach(([k,v])=>pending.set(k,v))}catch(e){}
   updateSyncUI();
   const bust="?t="+Date.now();
