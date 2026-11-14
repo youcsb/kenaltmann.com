@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T02:26:48.766Z",
+ "updatedAt": "2026-11-14T02:27:16.688Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -785,6 +785,26 @@
     "best": "A crowd-pleasing whodunit for a Friday night."
    },
    "rating": 3
+  },
+  "fallout": {
+   "state": "watched",
+   "at": "2026-11-14T02:27:15.120Z",
+   "t": {
+    "title": "Fallout",
+    "service": "Prime Video",
+    "type": "Series",
+    "year": 2024,
+    "genre": "Drama",
+    "tags": [
+     "sci-fi",
+     "action",
+     "dark-comedy"
+    ],
+    "critics": 94,
+    "audience": null,
+    "best": "A funny, violent wasteland adventure. You don't need to know the games."
+   },
+   "rating": 4
   }
  }
 }
