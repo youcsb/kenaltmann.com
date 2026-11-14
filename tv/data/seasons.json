@@ -1,0 +1,926 @@
+{
+ "titles": {
+  "abbott-elementary": {
+   "tvmaze": 55350,
+   "title": "Abbott Elementary",
+   "total": 6,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2021
+    },
+    {
+     "n": 2,
+     "year": 2022
+    },
+    {
+     "n": 3,
+     "year": 2024
+    },
+    {
+     "n": 4,
+     "year": 2024
+    },
+    {
+     "n": 5,
+     "year": 2025
+    },
+    {
+     "n": 6,
+     "year": 2026
+    }
+   ]
+  },
+  "adolescence": {
+   "tvmaze": 78570,
+   "title": "Adolescence",
+   "total": 1,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2025
+    }
+   ]
+  },
+  "andor": {
+   "tvmaze": 52341,
+   "title": "Andor",
+   "total": 2,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2022
+    },
+    {
+     "n": 2,
+     "year": 2025
+    }
+   ]
+  },
+  "baby-reindeer": {
+   "tvmaze": 52426,
+   "title": "Baby Reindeer",
+   "total": 1,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2024
+    }
+   ]
+  },
+  "ballard": {
+   "tvmaze": 83270,
+   "title": "Ballard",
+   "total": 1,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2025
+    }
+   ]
+  },
+  "beef": {
+   "tvmaze": 54285,
+   "title": "Beef",
+   "total": 2,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2023
+    },
+    {
+     "n": 2,
+     "year": 2026
+    }
+   ]
+  },
+  "black-bird": {
+   "tvmaze": 53147,
+   "title": "Black Bird",
+   "total": 1,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2022
+    }
+   ]
+  },
+  "black-doves-s2": {
+   "tvmaze": 68407,
+   "title": "Black Doves",
+   "total": 2,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2024
+    },
+    {
+     "n": 2,
+     "year": 2026
+    }
+   ]
+  },
+  "bosch-legacy": {
+   "tvmaze": 60175,
+   "title": "Bosch: Legacy",
+   "total": 3,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2022
+    },
+    {
+     "n": 2,
+     "year": 2023
+    },
+    {
+     "n": 3,
+     "year": 2025
+    }
+   ]
+  },
+  "breaking-bad": {
+   "tvmaze": 169,
+   "title": "Breaking Bad",
+   "total": 5,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2008,
+     "critics": 86
+    },
+    {
+     "n": 2,
+     "year": 2009,
+     "critics": 97
+    },
+    {
+     "n": 3,
+     "year": 2010,
+     "critics": 100
+    },
+    {
+     "n": 4,
+     "year": 2011,
+     "critics": 100
+    },
+    {
+     "n": 5,
+     "year": 2012,
+     "critics": 97
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "fallout": {
+   "tvmaze": 49041,
+   "title": "Fallout",
+   "total": 2,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2024
+    },
+    {
+     "n": 2,
+     "year": 2025
+    }
+   ]
+  },
+  "fargo": {
+   "tvmaze": 32,
+   "title": "Fargo",
+   "total": 5,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2014
+    },
+    {
+     "n": 2,
+     "year": 2015
+    },
+    {
+     "n": 3,
+     "year": 2017
+    },
+    {
+     "n": 4,
+     "year": 2020
+    },
+    {
+     "n": 5,
+     "year": 2023
+    }
+   ]
+  },
+  "fleabag": {
+   "tvmaze": 16149,
+   "title": "Fleabag",
+   "total": 2,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2016
+    },
+    {
+     "n": 2,
+     "year": 2019,
+     "critics": 100,
+     "audience": 93
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "friday-night-lights": {
+   "tvmaze": 781,
+   "title": "Friday Night Lights",
+   "total": 5,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2006,
+     "critics": 94
+    },
+    {
+     "n": 2,
+     "year": 2007,
+     "critics": 92
+    },
+    {
+     "n": 3,
+     "year": 2008,
+     "critics": 100
+    },
+    {
+     "n": 4,
+     "year": 2009,
+     "critics": 100
+    },
+    {
+     "n": 5,
+     "year": 2010,
+     "critics": 100
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "justified": {
+   "tvmaze": 106,
+   "title": "Justified",
+   "total": 6,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2010,
+     "critics": 93
+    },
+    {
+     "n": 2,
+     "year": 2011,
+     "critics": 100
+    },
+    {
+     "n": 3,
+     "year": 2012,
+     "critics": 96
+    },
+    {
+     "n": 4,
+     "year": 2013,
+     "critics": 100
+    },
+    {
+     "n": 5,
+     "year": 2014,
+     "critics": 96
+    },
+    {
+     "n": 6,
+     "year": 2015,
+     "critics": 100
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "mindhunter": {
+   "tvmaze": 10822,
+   "title": "Mindhunter",
+   "total": 2,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2017
+    },
+    {
+     "n": 2,
+     "year": 2019
+    }
+   ]
+  },
+  "mr-inbetween": {
+   "tvmaze": 34268,
+   "title": "Mr Inbetween",
+   "total": 3,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2018
+    },
+    {
+     "n": 2,
+     "year": 2019
+    },
+    {
+     "n": 3,
+     "year": 2021
+    }
+   ]
+  },
+  "my-bad-monkey": {
+   "tvmaze": 56778,
+   "title": "Bad Monkey",
+   "total": 1,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2024
+    }
+   ]
+  },
+  "my-the-old-man": {
+   "tvmaze": 43155,
+   "title": "The Old Man",
+   "total": 2,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2022,
+     "critics": 97
+    },
+    {
+     "n": 2,
+     "year": 2024,
+     "critics": 64
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "nobody-wants-this": {
+   "tvmaze": 77060,
+   "title": "Nobody Wants This",
+   "total": 3,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2024
+    },
+    {
+     "n": 2,
+     "year": 2025
+    },
+    {
+     "n": 3,
+     "year": 2026
+    }
+   ]
+  },
+  "only-murders": {
+   "tvmaze": 48830,
+   "title": "Only Murders in the Building",
+   "total": 5,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2021,
+     "critics": 100
+    },
+    {
+     "n": 2,
+     "year": 2022,
+     "critics": 100,
+     "audience": 89
+    },
+    {
+     "n": 3,
+     "year": 2023
+    },
+    {
+     "n": 4,
+     "year": 2024
+    },
+    {
+     "n": 5,
+     "year": 2025
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "ozark": {
+   "tvmaze": 13417,
+   "title": "Ozark",
+   "total": 4,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2017,
+     "critics": 70
+    },
+    {
+     "n": 2,
+     "year": 2018,
+     "critics": 76
+    },
+    {
+     "n": 3,
+     "year": 2020,
+     "critics": 97
+    },
+    {
+     "n": 4,
+     "year": 2022,
+     "critics": 85
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "pachinko": {
+   "tvmaze": 41375,
+   "title": "Pachinko",
+   "total": 2,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2022
+    },
+    {
+     "n": 2,
+     "year": 2024
+    }
+   ]
+  },
+  "reacher": {
+   "tvmaze": 43031,
+   "title": "Reacher",
+   "total": 4,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2022
+    },
+    {
+     "n": 2,
+     "year": 2023
+    },
+    {
+     "n": 3,
+     "year": 2025
+    },
+    {
+     "n": 4,
+     "year": 2026
+    }
+   ]
+  },
+  "reservation-dogs": {
+   "tvmaze": 44909,
+   "title": "Reservation Dogs",
+   "total": 3,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2021
+    },
+    {
+     "n": 2,
+     "year": 2022
+    },
+    {
+     "n": 3,
+     "year": 2023
+    }
+   ]
+  },
+  "severance": {
+   "tvmaze": 44933,
+   "title": "Severance",
+   "total": 2,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2022,
+     "critics": 97,
+     "audience": 88
+    },
+    {
+     "n": 2,
+     "year": 2025,
+     "critics": 98
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "shadows": {
+   "tvmaze": 34522,
+   "title": "What We Do in the Shadows",
+   "total": 6,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2019
+    },
+    {
+     "n": 2,
+     "year": 2020
+    },
+    {
+     "n": 3,
+     "year": 2021
+    },
+    {
+     "n": 4,
+     "year": 2022
+    },
+    {
+     "n": 5,
+     "year": 2023
+    },
+    {
+     "n": 6,
+     "year": 2024
+    }
+   ]
+  },
+  "shogun": {
+   "tvmaze": 37336,
+   "title": "Shōgun",
+   "total": 1,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2024
+    }
+   ]
+  },
+  "shrinking": {
+   "tvmaze": 58323,
+   "title": "Shrinking",
+   "total": 3,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2023,
+     "critics": 91,
+     "audience": 87
+    },
+    {
+     "n": 2,
+     "year": 2024
+    },
+    {
+     "n": 3,
+     "year": 2026,
+     "critics": 93
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "slow-horses": {
+   "tvmaze": 45039,
+   "title": "Slow Horses",
+   "total": 6,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2022
+    },
+    {
+     "n": 2,
+     "year": 2022
+    },
+    {
+     "n": 3,
+     "year": 2023
+    },
+    {
+     "n": 4,
+     "year": 2024
+    },
+    {
+     "n": 5,
+     "year": 2025
+    },
+    {
+     "n": 6,
+     "year": 2026
+    }
+   ]
+  },
+  "succession": {
+   "tvmaze": 23470,
+   "title": "Succession",
+   "total": 4,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2018
+    },
+    {
+     "n": 2,
+     "year": 2019
+    },
+    {
+     "n": 3,
+     "year": 2021
+    },
+    {
+     "n": 4,
+     "year": 2023
+    }
+   ]
+  },
+  "ted-lasso": {
+   "tvmaze": 44458,
+   "title": "Ted Lasso",
+   "total": 4,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2020,
+     "critics": 92,
+     "audience": 95
+    },
+    {
+     "n": 2,
+     "year": 2021,
+     "critics": 97,
+     "audience": 84
+    },
+    {
+     "n": 3,
+     "year": 2023,
+     "critics": 81,
+     "audience": 75
+    },
+    {
+     "n": 4,
+     "year": 2026
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "the-americans": {
+   "tvmaze": 157,
+   "title": "The Americans",
+   "total": 6,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2013,
+     "critics": 88
+    },
+    {
+     "n": 2,
+     "year": 2014,
+     "critics": 97
+    },
+    {
+     "n": 3,
+     "year": 2015,
+     "critics": 100
+    },
+    {
+     "n": 4,
+     "year": 2016,
+     "critics": 99
+    },
+    {
+     "n": 5,
+     "year": 2017,
+     "critics": 94
+    },
+    {
+     "n": 6,
+     "year": 2018,
+     "critics": 99
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "the-bear": {
+   "tvmaze": 54198,
+   "title": "The Bear",
+   "total": 5,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2022
+    },
+    {
+     "n": 2,
+     "year": 2023
+    },
+    {
+     "n": 3,
+     "year": 2024
+    },
+    {
+     "n": 4,
+     "year": 2025
+    },
+    {
+     "n": 5,
+     "year": 2026
+    }
+   ]
+  },
+  "the-body": {
+   "tvmaze": 87480,
+   "title": "The Body",
+   "total": 1,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2026
+    }
+   ]
+  },
+  "the-office-us": {
+   "tvmaze": 526,
+   "title": "The Office",
+   "total": 9,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2005,
+     "critics": 71
+    },
+    {
+     "n": 2,
+     "year": 2005,
+     "critics": 100
+    },
+    {
+     "n": 3,
+     "year": 2006,
+     "critics": 100
+    },
+    {
+     "n": 4,
+     "year": 2007,
+     "critics": 83
+    },
+    {
+     "n": 5,
+     "year": 2008,
+     "critics": 100
+    },
+    {
+     "n": 6,
+     "year": 2009,
+     "critics": 73
+    },
+    {
+     "n": 7,
+     "year": 2010,
+     "critics": 83
+    },
+    {
+     "n": 8,
+     "year": 2011,
+     "critics": 44
+    },
+    {
+     "n": 9,
+     "year": 2012,
+     "critics": 78
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "the-sopranos": {
+   "tvmaze": 527,
+   "title": "The Sopranos",
+   "total": 6,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 1999,
+     "critics": 98
+    },
+    {
+     "n": 2,
+     "year": 2000,
+     "critics": 94
+    },
+    {
+     "n": 3,
+     "year": 2001,
+     "critics": 100
+    },
+    {
+     "n": 4,
+     "year": 2002,
+     "critics": 92
+    },
+    {
+     "n": 5,
+     "year": 2004,
+     "critics": 93
+    },
+    {
+     "n": 6,
+     "year": 2006
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "the-studio": {
+   "tvmaze": 75605,
+   "title": "The Studio",
+   "total": 1,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2025
+    }
+   ]
+  },
+  "the-wire": {
+   "tvmaze": 179,
+   "title": "The Wire",
+   "total": 5,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2002
+    },
+    {
+     "n": 2,
+     "year": 2003
+    },
+    {
+     "n": 3,
+     "year": 2004,
+     "critics": 100
+    },
+    {
+     "n": 4,
+     "year": 2006
+    },
+    {
+     "n": 5,
+     "year": 2008
+    }
+   ],
+   "checked": "2026-11-13"
+  },
+  "unbelievable": {
+   "tvmaze": 34526,
+   "title": "Unbelievable",
+   "total": 1,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2019
+    }
+   ]
+  },
+  "yellowstone": {
+   "tvmaze": 27848,
+   "title": "Yellowstone",
+   "total": 5,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2018,
+     "critics": 57,
+     "audience": 83
+    },
+    {
+     "n": 2,
+     "year": 2019,
+     "critics": 89,
+     "audience": 90
+    },
+    {
+     "n": 3,
+     "year": 2020,
+     "critics": 100,
+     "audience": 87
+    },
+    {
+     "n": 4,
+     "year": 2021,
+     "critics": 91,
+     "audience": 82
+    },
+    {
+     "n": 5,
+     "year": 2022
+    }
+   ],
+   "checked": "2026-11-13"
+  }
+ }
+}

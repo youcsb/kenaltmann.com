@@ -28,6 +28,12 @@
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
+.seasons{display:flex;flex-direction:column;gap:8px}
+.season-list{display:flex;gap:6px;flex-wrap:wrap}
+.season{display:flex;flex-direction:column;align-items:center;gap:1px;min-width:52px;padding:7px 8px;border-radius:10px;border:1px solid var(--line);background:var(--raise2);color:var(--muted);cursor:pointer;font:inherit}
+.season b{font-size:14px;color:var(--ink)}
+.season span{font-size:11px;font-weight:700}
+.season.seen{background:rgba(70,210,127,.16);border-color:var(--fresh);color:var(--fresh)}
 #toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:60;max-width:min(92vw,460px);background:var(--ink);color:#0A0B0F;font-weight:600;font-size:14px;line-height:1.35;padding:12px 16px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.5);transition:opacity .2s,transform .2s}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 html{background:var(--bg)}
@@ -264,6 +270,19 @@ function toast(msg){let el=document.getElementById("toast");if(!el){el=document.
 const todayPT=()=>new Date().toLocaleDateString("en-CA",{timeZone:"America/Los_Angeles"});
 const exactLeave=t=>/^\d{4}-\d{2}-\d{2}$/.test(t.leaving||"")&&t.leaving>todayPT();
 const hasLeft=t=>/^\d{4}-\d{2}-\d{2}$/.test(t.leaving||"")&&t.leaving<=todayPT();
+/* Seasons: "watched" on a series means season 1 unless the viewer says more. */
+const seasonsOf=id=>state.seasons?.[id]||null;
+const seenOf=m=>m?.seasonsSeen||1;
+function setSeen(id,n){const t=lookup(id);if(!t)return;const cur=state.marks[id]||{};
+  return saveMark(id,{...cur,state:"watched",seasonsSeen:n,at:new Date().toISOString(),t:{...(cur.t||{}),...snap(t)}})}
+function nextSeasons(){const out=[];
+  for(const[id,m]of Object.entries(state.marks)){
+    if(m.state!=="watched"||(m.rating&&m.rating<=2))continue;
+    const S=seasonsOf(id);if(!S||S.total<=1)continue;const seen=seenOf(m);if(seen>=S.total)continue;
+    const nx=S.seasons.find(x=>x.n===seen+1);const base=lookup(id);if(!nx||!base)continue;
+    out.push({t:{...base,critics:nx.critics??null,audience:nx.audience??null},n:nx.n,sc:Math.max(nx.critics??0,nx.audience??0),rating:m.rating||3})}
+  return out.sort((a,b)=>(b.rating-a.rating)||(b.sc-a.sc))}
+const seenLabel=(id,m)=>{const S=seasonsOf(id);if(!S||S.total<=1)return"";const n=seenOf(m);return n>=S.total?"All seasons":n===1?"Season 1":`Seasons 1–${n}`};
 /* ---------- tiles ---------- */
 function tile(t,opts={}){const m=state.marks[t.id];const img=artOf(t.id);const sv=SVC[t.service];
   const flag=opts.flag||(hasLeft(t)?'<span class="flag leave">Gone</span>':exactLeave(t)?'<span class="flag leave">Leaving</span>':t.added?'<span class="flag">New</span>':m?.state==="want"?'<span class="flag seen">My List</span>':"");
@@ -307,6 +326,9 @@ function render(){
   const sub=t=>{const m=mk(t);return{sub:m.pct&&useT?`<span style="color:var(--fresh);font-weight:700">${m.pct}% match</span> · ${esc(t.service)}`:esc(t.service)}};
   let html="";
   html+=shelf("for-you",useT?"Top picks for you":"Top picks","Ranked by your ratings + Rotten Tomatoes",ranked.filter(t=>t!==heroX?.t).slice(0,16),{tile:sub});
+  const ns=nextSeasons().filter(x=>state.svc.has(x.t.service)||!SVC[x.t.service]);
+  html+=shelf("next-season","Your next season","The season after the one you've seen, scored on its own",ns.map(x=>x.t),{tile:t=>{const x=ns.find(y=>y.t.id===t.id);
+    return{flag:`<span class="flag">S${x.n}</span>`,sub:`Season ${x.n} · `+(x.sc?`${x.sc}%`+(x.sc<90?" (under 90)":""):"score coming")}}});
   const inRanked=new Set(ranked.map(t=>t.id));
   const myList=[...ranked.filter(t=>state.marks[t.id]?.state==="want"),...Object.entries(state.marks).filter(([id,m])=>m.state==="want"&&!inRanked.has(id)).map(([id])=>lookup(id)).filter(Boolean)];
   const addTile=`<button class="tile" data-action="add-title" aria-label="Add a title to My List"><div class="art add-art"><span aria-hidden="true">+</span><b>Add a title</b><small>Someone told you to watch something?</small></div><div class="tile-t">Add a title</div></button>`;
@@ -328,7 +350,7 @@ function render(){
   // Ratings
   const rated=Object.entries(state.marks).filter(([,m])=>m.t&&(m.state==="watched"||m.state==="skip")).map(([id,m])=>({id,...m.t,_r:m.state==="skip"?0:(m.rating||.5),_m:m}))
     .sort((a,b)=>b._r-a._r||a.title.localeCompare(b.title));
-  $("rated").innerHTML=rated.length?rated.map(t=>tile(t,{flag:"",sub:t._m.state==="skip"?"Passed":t._m.rating?`<span class="stars-mini">${"★".repeat(t._m.rating)}</span>`:"Tap to rate"})).join(""):`<div class="empty-row">Open any title and mark it watched to rate it.</div>`;
+  $("rated").innerHTML=rated.length?rated.map(t=>tile(t,{flag:"",sub:t._m.state==="skip"?"Passed":(t._m.rating?`<span class="stars-mini">${"★".repeat(t._m.rating)}</span>`:"Tap to rate")+(seenLabel(t.id,t._m)?` · ${seenLabel(t.id,t._m)}`:"")})).join(""):`<div class="empty-row">Open any title and mark it watched to rate it.</div>`;
   $("rated-sub").textContent=rated.length?`${rated.filter(t=>t._m.rating).length} rated · ${rated.filter(t=>t._m.state==="skip").length} passed`:"";
   const top=Object.entries(taste.aff).filter(([k,v])=>k.startsWith("t:")&&Math.abs(v)>=.4).sort((a,b)=>b[1]-a[1]);
   $("taste").innerHTML=useT?[...top.filter(x=>x[1]>0).slice(0,6).map(([k])=>`<span>More ${esc(k.slice(2).replace(/-/g," "))}</span>`),...top.filter(x=>x[1]<0).slice(-3).map(([k])=>`<span class="less">Less ${esc(k.slice(2).replace(/-/g," "))}</span>`)].join(""):"";
@@ -363,6 +385,9 @@ function openSheet(id,refresh){const t=lookup(id);if(!t)return;if(!refresh)lastF
        <button class="btn sec" data-id="${id}" data-mark="watched" aria-pressed="${m?.state==="watched"}">${m?.state==="watched"?"✓ Watched":"I've seen it"}</button>
        <button class="btn sec" data-id="${id}" data-mark="skip" aria-pressed="${m?.state==="skip"}">${m?.state==="skip"?"Passed":"Not for me"}</button></div>
      ${m?.state==="watched"?`<div class="rate" role="group" aria-label="Your rating"><span>${m.rating?"Your rating":"How was it?"}</span>${[1,2,3,4,5].map(i=>`<button class="star ${i<=(m.rating||0)?"on":""}" data-id="${id}" data-rate="${i}" aria-label="${i} star${i>1?"s":""}" aria-pressed="${m.rating===i}">★</button>`).join("")}</div>`:""}
+     ${(()=>{const S=seasonsOf(id);if(!S||S.total<2)return"";const seen=m?.state==="watched"?seenOf(m):0;
+       return `<div class="seasons"><span class="lbl">Seasons · tap the last one you've watched</span><div class="season-list">${S.seasons.map(x=>`<button class="season ${x.n<=seen?"seen":""}" data-id="${id}" data-season="${x.n}" aria-pressed="${x.n<=seen}" aria-label="Watched through season ${x.n}"><b>S${x.n}</b><span>${x.critics!=null?x.critics+"%":"–"}</span></button>`).join("")}</div>
+         <small class="why">${seen?(seen>=S.total?`You've seen all ${S.total} seasons.`:`You've seen ${seen===1?"season 1":"seasons 1–"+seen}. Season ${seen+1} is up next.`):"Scores are each season's own Rotten Tomatoes critics score."}</small></div>`})()}
    </div>`;
   $("scrim").hidden=false;if(!refresh)$("close").focus()}
 function closeSheet(){state.open=null;$("scrim").hidden=true;lastFocus?.focus?.()}
@@ -374,6 +399,7 @@ document.addEventListener("click",e=>{
   if(b.dataset.svc){const s=b.dataset.svc;state.svc.has(s)&&state.svc.size>1?state.svc.delete(s):state.svc.add(s);try{localStorage.setItem("ninety-svc",JSON.stringify([...state.svc]))}catch(e){}return render()}
   if(b.dataset.mark)return toggleMark(b.dataset.id,b.dataset.mark);
   if(b.dataset.rate)return rate(b.dataset.id,+b.dataset.rate);
+  if(b.dataset.season)return setSeen(b.dataset.id,+b.dataset.season);
   if(b.dataset.action)return actions[b.dataset.action]();
   if(b.dataset.open)return openSheet(b.dataset.open);
 });
@@ -481,7 +507,8 @@ async function load(){
   const bust="?t="+Date.now();
   try{const[feed,art]=await Promise.all([fetch("data/feed.json"+bust).then(r=>{if(!r.ok)throw 0;return r.json()}),fetch("data/posters.json"+bust).then(r=>r.json()).catch(()=>({map:{}}))]);
     state.feed=feed;state.art=art.map||{};render();
-    fetch("data/enrich.json"+bust).then(r=>r.ok?r.json():{titles:{}}).then(d=>{state.enrich=d.titles||{};render()}).catch(()=>{})}
+    fetch("data/enrich.json"+bust).then(r=>r.ok?r.json():{titles:{}}).then(d=>{state.enrich=d.titles||{};render()}).catch(()=>{});
+    fetch("data/seasons.json"+bust).then(r=>r.ok?r.json():{titles:{}}).then(d=>{state.seasons=d.titles||{};render()}).catch(()=>{})}
   catch(e){$("hero-kick").textContent="Lineup unavailable";showNotice("Today's lineup didn't load. Check your connection and reopen the app.");return}
   try{const data=token?(await readRemote()).data:await fetch("data/ratings.json"+bust).then(r=>r.json());state.marks=applyPending(data.marks||{});persistLocal();render()}
   catch(e){if(token&&(e.status===401||e.status===403))syncError="auth"}
