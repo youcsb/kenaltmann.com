@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T02:42:32.642Z",
+ "updatedAt": "2026-11-14T02:42:41.448Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -607,7 +607,7 @@
    }
   },
   "yellowstone": {
-   "at": "2026-11-13T16:00:00-08:00",
+   "at": "2026-11-14T02:42:39.890Z",
    "rating": 5,
    "state": "watched",
    "t": {
@@ -625,7 +625,8 @@
     "title": "Yellowstone",
     "type": "Series",
     "year": 2018
-   }
+   },
+   "seasonsSeen": 5
   },
   "my-bad-monkey": {
    "state": "want",
