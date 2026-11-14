@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T02:44:03.894Z",
+ "updatedAt": "2026-11-14T02:44:12.986Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -817,9 +817,8 @@
    "rating": 4
   },
   "my-west-wing": {
-   "state": "want",
-   "at": "2026-11-14T02:44:02.440Z",
-   "manual": true,
+   "state": "watched",
+   "at": "2026-11-14T02:44:11.518Z",
    "t": {
     "title": "West wing",
     "service": "",
@@ -830,7 +829,9 @@
     "critics": null,
     "audience": null,
     "best": "Added by you."
-   }
+   },
+   "manual": true,
+   "rating": 5
   }
  }
 }
