@@ -28,6 +28,10 @@
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
+.ask-btn{color:#E9C7FF;border-color:rgba(200,150,255,.35)}
+.btn.sec.ask{color:#E9C7FF}
+.ask-chip{border:1px solid var(--line);cursor:pointer;font:600 13px var(--f);padding:7px 12px;text-align:left}
+#ask-q{resize:vertical;min-height:84px;line-height:1.4}
 .search-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--raise);color:var(--ink);border-radius:999px;padding:6px 12px;font:600 13px var(--f);cursor:pointer}
 .search-panel{position:fixed;inset:0;z-index:45;background:var(--bg);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
 .search-top{display:flex;gap:8px;align-items:center;padding-block:12px;border-bottom:1px solid var(--line)}
@@ -185,6 +189,7 @@ footer{color:var(--dim);font-size:12px;max-width:80ch;padding-bottom:40px}
 <body>
 <header class="bar gut">
   <div class="logo">The <b>90</b> Club</div>
+  <button class="search-btn ask-btn" data-action="ask" aria-label="Ask Claude">✦ <span>Ask</span></button>
   <button class="search-btn" data-action="search" aria-label="Search titles"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span></button>
   <nav class="tabs" aria-label="Sections"><a href="#for-you">For You</a><a href="#my-list">My List</a><a href="#sports">Sports</a><a href="#ratings">Ratings</a></nav>
   <div class="svcs" id="svcs" role="group" aria-label="Services"></div>
@@ -383,7 +388,8 @@ function openSheet(id,refresh){const t=lookup(id);if(!t)return;if(!refresh)lastF
      <div class="btns">${sv?`<a class="btn pri" href="${watchUrl(t)}" data-copy="${esc(t.title)}" target="_blank" rel="noopener">Open in ${esc(t.service)}</a>`:`<a class="btn pri" href="https://www.justwatch.com/us/search?q=${encodeURIComponent(t.title)}" target="_blank" rel="noopener">Find where to watch</a>`}
        <button class="btn sec" data-id="${id}" data-mark="want" aria-pressed="${m?.state==="want"}">${m?.state==="want"?"✓ On My List":"+ My List"}</button>
        <button class="btn sec" data-id="${id}" data-mark="watched" aria-pressed="${m?.state==="watched"}">${m?.state==="watched"?"✓ Watched":"I've seen it"}</button>
-       <button class="btn sec" data-id="${id}" data-mark="skip" aria-pressed="${m?.state==="skip"}">${m?.state==="skip"?"Passed":"Not for me"}</button></div>
+       <button class="btn sec" data-id="${id}" data-mark="skip" aria-pressed="${m?.state==="skip"}">${m?.state==="skip"?"Passed":"Not for me"}</button>
+       <button class="btn sec ask" data-action="ask" data-id="${id}">✦ Ask Claude</button></div>
      ${m?.state==="watched"?`<div class="rate" role="group" aria-label="Your rating"><span>${m.rating?"Your rating":"How was it?"}</span>${[1,2,3,4,5].map(i=>`<button class="star ${i<=(m.rating||0)?"on":""}" data-id="${id}" data-rate="${i}" aria-label="${i} star${i>1?"s":""}" aria-pressed="${m.rating===i}">★</button>`).join("")}</div>`:""}
      ${(()=>{const S=seasonsOf(id);if(!S||S.total<2)return"";const seen=m?.state==="watched"?seenOf(m):0;
        return `<div class="seasons"><span class="lbl">Seasons · tap the last one you've watched</span><div class="season-list">${S.seasons.map(x=>`<button class="season ${x.n<=seen?"seen":""}" data-id="${id}" data-season="${x.n}" aria-pressed="${x.n<=seen}" aria-label="Watched through season ${x.n}"><b>S${x.n}</b><span>${x.critics!=null?x.critics+"%":"–"}</span></button>`).join("")}</div>
@@ -400,7 +406,7 @@ document.addEventListener("click",e=>{
   if(b.dataset.mark)return toggleMark(b.dataset.id,b.dataset.mark);
   if(b.dataset.rate)return rate(b.dataset.id,+b.dataset.rate);
   if(b.dataset.season)return setSeen(b.dataset.id,+b.dataset.season);
-  if(b.dataset.action)return actions[b.dataset.action]();
+  if(b.dataset.action)return actions[b.dataset.action](b);
   if(b.dataset.open)return openSheet(b.dataset.open);
 });
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("scrim").hidden)closeSheet()});
@@ -492,7 +498,48 @@ document.addEventListener("change",e=>{if(e.target.name!=="add-state")return;con
   $("add-rate").hidden=!seen;$("add-go").textContent=seen?"Save rating":"Add to My List"});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-addrate]");if(!b)return;const v=+b.dataset.addrate,box=$("add-rate");
   box.dataset.v=box.dataset.v==v?"":v;box.querySelectorAll(".star").forEach(x=>x.classList.toggle("on",+x.dataset.addrate<=+(box.dataset.v||0)))});
+/* Ask Claude: hand the question off to the Claude app/site with this viewer's context filled in. */
+function askContext(t){
+  const ms=Object.values(state.marks).filter(m=>m.t);
+  const loved=ms.filter(m=>m.rating===5).map(m=>m.t.title).slice(0,14);
+  const liked=ms.filter(m=>m.rating===4).map(m=>m.t.title).slice(0,8);
+  const no=ms.filter(m=>(m.rating&&m.rating<=2)||m.state==="skip").map(m=>m.t.title).slice(0,10);
+  const L=["I'm using my personal streaming guide, The 90 Club. My services: Netflix, Prime Video (included titles only), Disney+, Hulu, Apple TV, plus YouTube TV and ESPN+ for sports. I like titles with a Rotten Tomatoes critics or audience score of 90%+."];
+  if(state.profile?.summary)L.push("My taste: "+state.profile.summary);
+  if(loved.length)L.push("Loved: "+loved.join(", ")+".");
+  if(liked.length)L.push("Liked: "+liked.join(", ")+".");
+  if(no.length)L.push("Didn't like or passed on: "+no.join(", ")+".");
+  if(t){const m=state.marks[t.id],S=seasonsOf(t.id);
+    let st="I haven't watched it yet.";
+    if(m?.state==="watched")st="I've watched it"+(S&&S.total>1?` through season ${seenOf(m)} of ${S.total}`:"")+(m.rating?` and rated it ${m.rating}/5`:"")+".";
+    else if(m?.state==="want")st="It's on my watchlist.";else if(m?.state==="skip")st="I passed on it.";
+    L.push(`About "${t.title}" (${[t.year,t.type==="Series"?"series":t.type?.toLowerCase(),t.service&&"on "+t.service,t.critics!=null&&"Rotten Tomatoes "+t.critics+"%"].filter(Boolean).join(", ")}). ${st}`)}
+  L.push("Please answer briefly and specifically for me.");
+  return L.join("\n")}
+const ASK_SUGGEST={title:["Should I watch anything before this?","Is this worth it for me? How many episodes until it hooks?","What else would I like if I like this?"],
+  home:["What should I watch tonight?","Something great under 2 hours tonight?","Which of my next seasons should I start first?"]};
+function askUrl(id){const t=id?lookup(id):null;const q=($("ask-q")?.value||"").trim()||$("ask-q")?.placeholder||"";
+  return "https://claude.ai/new?q="+encodeURIComponent(askContext(t)+"\n\nMy question: "+q)}
+function openAsk(b){const id=b?.dataset?.id||"";const t=id?lookup(id):null;state.open=null;lastFocus=document.activeElement;
+  const sug=ASK_SUGGEST[t?"title":"home"];
+  $("sheet").innerHTML=`<button class="close" id="close" aria-label="Close">✕</button>
+  <form class="sheet-body add-form" id="askf" style="padding-top:28px" autocomplete="off">
+   <h2 id="sheet-title" style="margin:0">✦ Ask Claude${t?` about ${esc(t.title)}`:""}</h2>
+   <p>Opens Claude with your question, plus your services, taste and ratings${t?" and where you are with this title":""}, so the answer fits you.</p>
+   <div class="chips">${sug.map(x=>`<button type="button" class="chip ask-chip" data-ask="${esc(x)}">${esc(x)}</button>`).join("")}</div>
+   <label class="lbl" for="ask-q">Your question</label>
+   <textarea id="ask-q" class="field" rows="3" placeholder="${esc(sug[0])}"></textarea>
+   <div class="btns"><a class="btn pri" id="ask-go" data-id="${esc(id)}" href="${askUrl(id)}" target="_blank" rel="noopener">✦ Ask Claude</a></div>
+   <p class="status">Your question is copied too, in case Claude opens without it.</p>
+  </form>`;
+  $("scrim").hidden=false;$("ask-q").focus()}
+document.addEventListener("input",e=>{if(e.target.id==="ask-q")$("ask-go").href=askUrl($("ask-go").dataset.id)});
+document.addEventListener("click",e=>{const c=e.target.closest("[data-ask]");if(c){$("ask-q").value=c.dataset.ask;$("ask-go").href=askUrl($("ask-go").dataset.id);$("ask-q").focus();return}
+  const go=e.target.closest("#ask-go");if(go){go.href=askUrl(go.dataset.id);const q=($("ask-q").value.trim()||$("ask-q").placeholder);
+    try{navigator.clipboard.writeText(q)}catch(err){}}});
+document.addEventListener("submit",e=>{if(e.target.id==="askf"){e.preventDefault();$("ask-go").click()}});
 const actions={
+  ask:openAsk,
   "add-title":()=>openAddForm(),
   "add-from-search":()=>openAddForm($("q").value.trim()),
   search:openSearch,
@@ -505,7 +552,7 @@ const actions={
   "forget-token":()=>{token=null;try{localStorage.removeItem(TOKEN_KEY)}catch(e){}updateSyncUI();closeSheet()}
 };
 /* Self-update: when a newer app version is published, reload once with a cache-busting URL. */
-const APP_VERSION="2026-11-14-nohero";
+const APP_VERSION="2026-11-14-ask";
 async function checkUpdate(){try{const v=await fetch("data/version.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json());
   if(v.app&&v.app!==APP_VERSION&&new URLSearchParams(location.search).get("v")!==v.app){location.replace(location.pathname+"?v="+encodeURIComponent(v.app));return true}}catch(e){}return false}
 async function load(){
@@ -516,6 +563,7 @@ async function load(){
   try{const[feed,art]=await Promise.all([fetch("data/feed.json"+bust).then(r=>{if(!r.ok)throw 0;return r.json()}),fetch("data/posters.json"+bust).then(r=>r.json()).catch(()=>({map:{}}))]);
     state.feed=feed;state.art=art.map||{};render();
     fetch("data/enrich.json"+bust).then(r=>r.ok?r.json():{titles:{}}).then(d=>{state.enrich=d.titles||{};render()}).catch(()=>{});
+    fetch("data/profile.json"+bust).then(r=>r.ok?r.json():{}).then(d=>{state.profile=d}).catch(()=>{});
     fetch("data/seasons.json"+bust).then(r=>r.ok?r.json():{titles:{}}).then(d=>{state.seasons=d.titles||{};render()}).catch(()=>{})}
   catch(e){showNotice("Today's lineup didn't load. Check your connection and reopen the app.");return}
   try{const data=token?(await readRemote()).data:await fetch("data/ratings.json"+bust).then(r=>r.json());state.marks=applyPending(data.marks||{});persistLocal();render()}
