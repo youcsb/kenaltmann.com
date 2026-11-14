@@ -234,7 +234,7 @@ function showNotice(t){$("notice").textContent=t;$("notice-wrap").hidden=false}
 
 /* ---------- marks ---------- */
 function toggleMark(id,kind){const t=lookup(id);if(!t)return;const cur=state.marks[id];const next=cur?.state===kind?null:kind;
-  if(!next)return saveMark(id,null);const body={state:next,at:new Date().toISOString(),t:snap(t)};
+  if(!next)return saveMark(id,null);const body={state:next,at:new Date().toISOString(),t:{...(cur?.t||{}),...snap(t)}};if(cur?.manual)body.manual=true;
   if(next==="watched"&&cur?.rating)body.rating=cur.rating;return saveMark(id,body)}
 function rate(id,n){const t=lookup(id);if(!t)return;const cur=state.marks[id];const body={...(cur||{}),state:"watched",at:new Date().toISOString(),t:snap(t)};
   if(cur?.rating===n)delete body.rating;else body.rating=n;return saveMark(id,body)}
