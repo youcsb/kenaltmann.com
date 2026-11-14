@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T01:24:07.353Z",
+ "updatedAt": "2026-11-14T01:26:49.744Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -728,6 +728,25 @@
     "best": "A modern-day U.S. Marshal back home in Kentucky. Crime meets western, a natural next watch after Yellowstone."
    },
    "rating": 4
+  },
+  "free-solo": {
+   "state": "watched",
+   "at": "2026-11-14T01:26:49.597Z",
+   "t": {
+    "title": "Free Solo",
+    "service": "Disney+",
+    "type": "Documentary",
+    "year": 2018,
+    "genre": "Documentary",
+    "tags": [
+     "sports",
+     "adventure"
+    ],
+    "critics": 97,
+    "audience": null,
+    "best": "Alex Honnold climbs El Capitan with no rope. Sweaty palms guaranteed."
+   },
+   "rating": 5
   }
  }
 }
