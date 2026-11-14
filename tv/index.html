@@ -242,7 +242,10 @@ function rate(id,n){const t=lookup(id);if(!t)return;const cur=state.marks[id];co
    ignore search terms in links, so their search pages open empty). */
 const JUMP={"Hulu":"hulu.com","Disney+":"disneyplus.com","Apple TV":"tv.apple.com"};
 function watchUrl(t){if(t.url&&/^https:\/\//.test(t.url))return t.url;
-  const site=JUMP[t.service];if(site)return "https://duckduckgo.com/?q="+encodeURIComponent("!ducky site:"+site+" "+t.title);
+  let site=JUMP[t.service];
+  if(site){if(t.service==="Hulu")site+=t.type==="Series"?"/series":"/movie";
+    const plain=String(t.title).normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    return "https://duckduckgo.com/?q="+encodeURIComponent("!ducky site:"+site+" "+plain+(t.year?" "+t.year:""))}
   const sv=SVC[t.service];return sv?sv.u+encodeURIComponent(t.title):"https://www.justwatch.com/us/search?q="+encodeURIComponent(t.title)}
 /* ---------- tiles ---------- */
 function tile(t,opts={}){const m=state.marks[t.id];const img=artOf(t.id);const sv=SVC[t.service];
