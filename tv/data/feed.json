@@ -517,21 +517,6 @@
   },
   {
    "audience": null,
-   "best": "A quiet, moving nature story and an Oscar winner.",
-   "critics": 95,
-   "genre": "Documentary",
-   "id": "octopus-teacher",
-   "service": "Netflix",
-   "tags": [
-    "nature"
-   ],
-   "title": "My Octopus Teacher",
-   "type": "Documentary",
-   "verified": false,
-   "year": 2020
-  },
-  {
-   "audience": null,
    "best": "Lost concert footage from the 1969 Harlem Cultural Festival. Joyful.",
    "critics": 99,
    "genre": "Documentary",
@@ -546,22 +531,6 @@
    "verified": false,
    "year": 2021,
    "url": "https://www.hulu.com/movie/summer-of-soul-6f2160ed-eaa2-462a-b495-f61f4f31714d"
-  },
-  {
-   "audience": null,
-   "best": "Alex Honnold climbs El Capitan with no rope. Sweaty palms guaranteed.",
-   "critics": 97,
-   "genre": "Documentary",
-   "id": "free-solo",
-   "service": "Disney+",
-   "tags": [
-    "sports",
-    "adventure"
-   ],
-   "title": "Free Solo",
-   "type": "Documentary",
-   "verified": false,
-   "year": 2018
   },
   {
    "audience": null,
