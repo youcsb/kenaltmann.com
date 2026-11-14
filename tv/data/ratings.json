@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T01:26:49.744Z",
+ "updatedAt": "2026-11-14T01:26:59.603Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -747,6 +747,24 @@
     "best": "Alex Honnold climbs El Capitan with no rope. Sweaty palms guaranteed."
    },
    "rating": 5
+  },
+  "octopus-teacher": {
+   "state": "watched",
+   "at": "2026-11-14T01:26:58.107Z",
+   "t": {
+    "title": "My Octopus Teacher",
+    "service": "Netflix",
+    "type": "Documentary",
+    "year": 2020,
+    "genre": "Documentary",
+    "tags": [
+     "nature"
+    ],
+    "critics": 95,
+    "audience": null,
+    "best": "A quiet, moving nature story and an Oscar winner."
+   },
+   "rating": 4
   }
  }
 }
