@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T02:27:16.688Z",
+ "updatedAt": "2026-11-14T02:41:07.356Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -102,7 +102,7 @@
    }
   },
   "breaking-bad": {
-   "at": "2026-11-13T16:00:00-08:00",
+   "at": "2026-11-14T02:41:05.725Z",
    "rating": 5,
    "state": "watched",
    "t": {
@@ -120,7 +120,8 @@
     "title": "Breaking Bad",
     "type": "Series",
     "year": 2008
-   }
+   },
+   "seasonsSeen": 5
   },
   "fleabag": {
    "at": "2026-11-13T16:00:00-08:00",
