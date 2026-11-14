@@ -1,1 +1,47 @@
-{"titles":{}}
+{
+ "titles": {
+  "my-the-old-man": {
+   "title": "The Old Man",
+   "year": 2022,
+   "type": "Series",
+   "service": "Hulu",
+   "genre": "Thriller",
+   "tags": [
+    "spy",
+    "thriller",
+    "action",
+    "character-study"
+   ],
+   "critics": 97,
+   "audience": null
+  },
+  "my-terminator-2": {
+   "title": "Terminator 2: Judgment Day",
+   "year": 1991,
+   "type": "Movie",
+   "service": "",
+   "genre": "Thriller",
+   "tags": [
+    "action",
+    "sci-fi",
+    "thriller"
+   ],
+   "critics": 91,
+   "audience": 95
+  },
+  "my-bad-monkey": {
+   "title": "Bad Monkey",
+   "year": 2024,
+   "type": "Series",
+   "service": "Apple TV",
+   "genre": "Comedy",
+   "tags": [
+    "crime",
+    "dark-comedy",
+    "mystery"
+   ],
+   "critics": 93,
+   "audience": null
+  }
+ }
+}

@@ -259,9 +259,14 @@ document.addEventListener("click",e=>{const a=e.target.closest("a[data-copy]");i
   const href=a.getAttribute("href")||"";if(/^[a-z]+:\/\//i.test(href)&&!/^https?:/i.test(href)){e.preventDefault();setTimeout(()=>{location.href=href},60)}});
 function toast(msg){let el=document.getElementById("toast");if(!el){el=document.createElement("div");el.id="toast";el.setAttribute("role","status");document.body.appendChild(el)}
   el.textContent=msg;el.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove("on"),6000)}
+/* "leaving" is the first day a title is no longer on its service (YYYY-MM-DD).
+   Hide titles on or after that day; month-only dates are too vague to show as "Leaving soon". */
+const todayPT=()=>new Date().toLocaleDateString("en-CA",{timeZone:"America/Los_Angeles"});
+const exactLeave=t=>/^\d{4}-\d{2}-\d{2}$/.test(t.leaving||"")&&t.leaving>todayPT();
+const hasLeft=t=>/^\d{4}-\d{2}-\d{2}$/.test(t.leaving||"")&&t.leaving<=todayPT();
 /* ---------- tiles ---------- */
 function tile(t,opts={}){const m=state.marks[t.id];const img=artOf(t.id);const sv=SVC[t.service];
-  const flag=opts.flag||(t.leaving?'<span class="flag leave">Leaving</span>':t.added?'<span class="flag">New</span>':m?.state==="want"?'<span class="flag seen">My List</span>':"");
+  const flag=opts.flag||(hasLeft(t)?'<span class="flag leave">Gone</span>':exactLeave(t)?'<span class="flag leave">Leaving</span>':t.added?'<span class="flag">New</span>':m?.state==="want"?'<span class="flag seen">My List</span>':"");
   return `<button class="tile" data-open="${t.id}" aria-label="${esc(t.title)}">
     <div class="art" style="--c:${svcColor(t.service)}">${img?`<img src="${esc(img)}" alt="" loading="lazy">`:`<div class="fallback"><span>${esc(t.title)}</span></div>`}
       ${sv?`<span class="badge" style="--c:${svcColor(t.service)}">${sv.s}</span>`:""}${flag}
@@ -278,7 +283,7 @@ function render(){
   const taste=buildTaste(),useT=taste.votes>=2;
   const mk=t=>useT?matchOf(t,taste):{score:best(t),taste:0,pct:null,why:null};
   const hidden=t=>{const s=state.marks[t.id]?.state;return s==="watched"||s==="skip"};
-  const pool=f.titles.filter(t=>state.svc.has(t.service)&&!hidden(t)&&!(t.manual&&best(t)<90));
+  const pool=f.titles.filter(t=>state.svc.has(t.service)&&!hidden(t)&&!hasLeft(t)&&!(t.manual&&best(t)<90));
   const scored=pool.map(t=>({t,m:mk(t)})).sort((a,b)=>b.m.score-a.m.score||a.t.title.localeCompare(b.t.title));
   const ranked=scored.map(x=>x.t);
 
@@ -317,7 +322,7 @@ function render(){
   html+=shelf("comedy","Comedy","",ranked.filter(t=>t.genre==="Comedy"),{tile:sub});
   html+=shelf("drama","Drama & thrillers","",ranked.filter(t=>/Drama|Thriller/.test(t.genre)&&t.type!=="Documentary"),{tile:sub});
   html+=shelf("docs","Documentaries","",ranked.filter(t=>t.type==="Documentary"),{tile:sub});
-  html+=shelf("leaving","Leaving soon","Catch these before they go",ranked.filter(t=>t.leaving),{tile:t=>({sub:esc(t.leavingNote||"Leaving "+fmtShort(t.leaving))})});
+  html+=shelf("leaving","Leaving soon","Catch these before they go",ranked.filter(t=>exactLeave(t)),{tile:t=>({sub:esc(t.leavingNote||"Leaving "+fmtShort(t.leaving))})});
   $("shelves").innerHTML=html;
 
   // Ratings

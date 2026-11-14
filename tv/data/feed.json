@@ -10,11 +10,11 @@
    "teams": "Warriors at Spurs"
   },
   {
-   "channel": "Check listing",
+   "channel": "FOX",
    "id": "g2",
    "league": "CFB",
    "mine": true,
-   "note": "UCLA is 9-0. Rose Bowl, Friday night.",
+   "note": "UCLA is 9-0 and ranked No. 4. Rose Bowl, Friday night.",
    "start": "2026-11-13T18:00:00-08:00",
    "teams": "Illinois at UCLA"
   },
@@ -188,7 +188,7 @@
    "id": "g21",
    "league": "CFB",
    "mine": true,
-   "note": "First UCLA game at the Big House since 1996.",
+   "note": "Time and TV get set Sunday, Nov 15.",
    "start": "2026-11-21",
    "tba": true,
    "teams": "UCLA at Michigan"
@@ -201,28 +201,28 @@
    "note": "Streaming-only on B1G+.",
    "start": "2026-11-22T16:00:00-08:00",
    "teams": "Delaware at UCLA"
+  },
+  {
+   "id": "g23",
+   "league": "NFL",
+   "teams": "Colts at Texans",
+   "start": "2026-11-19T17:15:00-08:00",
+   "channel": "Prime Video",
+   "mine": false,
+   "note": "Thursday Night Football."
+  },
+  {
+   "id": "g24",
+   "league": "NBA",
+   "teams": "Pelicans at Spurs",
+   "start": "2026-11-21T17:00:00-08:00",
+   "channel": "Regional (DAZN)",
+   "mine": true,
+   "note": "Not on your services."
   }
  ],
- "note": "Added titles matched to your ratings.",
+ "note": "Tuned to your ratings: more propulsive crime and action, fewer slow, heavy dramas.",
  "titles": [
-  {
-   "added": "2026-11-11",
-   "audience": 98,
-   "best": "The new must-watch: an eight-episode limited series that's #2 on Netflix worldwide.",
-   "critics": 100,
-   "genre": "Drama",
-   "id": "the-body",
-   "service": "Netflix",
-   "tags": [
-    "limited-series",
-    "mystery",
-    "dark"
-   ],
-   "title": "The Body",
-   "type": "Series",
-   "verified": true,
-   "year": 2026
-  },
   {
    "added": "2026-11-05",
    "audience": null,
@@ -256,77 +256,6 @@
    "type": "Movie",
    "verified": true,
    "year": 2026
-  },
-  {
-   "audience": null,
-   "best": "A sharp, funny period comedy about launching a 1970s magazine. Watch it before the license ends.",
-   "critics": 95,
-   "genre": "Comedy",
-   "id": "minx",
-   "leaving": "2026-11",
-   "leavingNote": "Leaving Netflix in November",
-   "service": "Netflix",
-   "tags": [
-    "period",
-    "workplace",
-    "half-hour"
-   ],
-   "title": "Minx",
-   "type": "Series",
-   "verified": true,
-   "year": 2022
-  },
-  {
-   "audience": null,
-   "best": "Four episodes, each filmed in one unbroken take. Gripping and short.",
-   "critics": 98,
-   "genre": "Drama",
-   "id": "adolescence",
-   "service": "Netflix",
-   "tags": [
-    "limited-series",
-    "british",
-    "crime",
-    "dark"
-   ],
-   "title": "Adolescence",
-   "type": "Series",
-   "verified": false,
-   "year": 2025
-  },
-  {
-   "audience": null,
-   "best": "A dark, true-ish stalker story that swept the Emmys. Seven episodes.",
-   "critics": 98,
-   "genre": "Drama",
-   "id": "baby-reindeer",
-   "service": "Netflix",
-   "tags": [
-    "limited-series",
-    "british",
-    "dark",
-    "true-story"
-   ],
-   "title": "Baby Reindeer",
-   "type": "Series",
-   "verified": false,
-   "year": 2024
-  },
-  {
-   "audience": null,
-   "best": "A road-rage feud that spirals. Darkly funny with real drama underneath.",
-   "critics": 98,
-   "genre": "Comedy",
-   "id": "beef",
-   "service": "Netflix",
-   "tags": [
-    "dark-comedy",
-    "limited-series"
-   ],
-   "title": "Beef",
-   "type": "Series",
-   "verified": false,
-   "year": 2023
   },
   {
    "audience": null,
@@ -430,44 +359,8 @@
    "title": "The Bear",
    "type": "Series",
    "verified": false,
-   "year": 2022
-  },
-  {
-   "audience": null,
-   "best": "A feel-good workplace mockumentary. The best network sitcom running.",
-   "critics": 98,
-   "genre": "Comedy",
-   "id": "abbott-elementary",
-   "service": "Hulu",
-   "tags": [
-    "workplace",
-    "mockumentary",
-    "half-hour",
-    "feel-good"
-   ],
-   "title": "Abbott Elementary",
-   "type": "Series",
-   "verified": false,
-   "year": 2021,
-   "url": "https://www.hulu.com/series/abbott-elementary-7c33eeb2-5d16-4a10-ad9e-ee31f9fff15c"
-  },
-  {
-   "audience": null,
-   "best": "Martin, Short and Gomez solve murders. Cozy comedy-mystery.",
-   "critics": 99,
-   "genre": "Comedy",
-   "id": "only-murders",
-   "service": "Hulu",
-   "tags": [
-    "mystery",
-    "half-hour",
-    "feel-good"
-   ],
-   "title": "Only Murders in the Building",
-   "type": "Series",
-   "verified": false,
-   "year": 2021,
-   "url": "https://www.hulu.com/series/ef31c7e1-cd0f-4e07-848d-1cbfedb50ddf"
+   "year": 2022,
+   "url": "https://www.hulu.com/series/the-bear-05eb6a8e-90ed-4947-8c0b-e6536cbddd5f"
   },
   {
    "audience": null,
@@ -486,23 +379,6 @@
    "verified": false,
    "year": 2019,
    "url": "https://www.hulu.com/series/what-we-do-in-the-shadows-0b10c46a-12f0-4357-8a00-547057b49bac"
-  },
-  {
-   "audience": null,
-   "best": "A funny, tender coming-of-age show set in rural Oklahoma.",
-   "critics": 99,
-   "genre": "Comedy",
-   "id": "reservation-dogs",
-   "service": "Hulu",
-   "tags": [
-    "coming-of-age",
-    "half-hour"
-   ],
-   "title": "Reservation Dogs",
-   "type": "Series",
-   "verified": false,
-   "year": 2021,
-   "url": "https://www.hulu.com/series/reservation-dogs-5a310c23-e2db-4c9f-a66c-27c2fee43d92"
   },
   {
    "audience": null,
@@ -538,74 +414,6 @@
    "type": "Series",
    "verified": false,
    "year": 2022
-  },
-  {
-   "audience": null,
-   "best": "The original Broadway cast, filmed live.",
-   "critics": 98,
-   "genre": "Drama",
-   "id": "hamilton",
-   "service": "Disney+",
-   "tags": [
-    "musical",
-    "period"
-   ],
-   "title": "Hamilton",
-   "type": "Movie",
-   "verified": false,
-   "year": 2020
-  },
-  {
-   "audience": null,
-   "best": "A workplace mystery that's eerie and funny. The best show on Apple TV.",
-   "critics": 96,
-   "genre": "Drama",
-   "id": "severance",
-   "service": "Apple TV",
-   "tags": [
-    "mystery",
-    "sci-fi",
-    "workplace",
-    "prestige"
-   ],
-   "title": "Severance",
-   "type": "Series",
-   "verified": false,
-   "year": 2022
-  },
-  {
-   "audience": null,
-   "best": "Gary Oldman leads a crew of washed-up spies. Short, tight seasons.",
-   "critics": 97,
-   "genre": "Thriller",
-   "id": "slow-horses",
-   "service": "Apple TV",
-   "tags": [
-    "spy",
-    "british",
-    "dark-comedy"
-   ],
-   "title": "Slow Horses",
-   "type": "Series",
-   "verified": false,
-   "year": 2022
-  },
-  {
-   "audience": null,
-   "best": "A feel-good comedy about an American coaching English soccer.",
-   "critics": 92,
-   "genre": "Comedy",
-   "id": "ted-lasso",
-   "service": "Apple TV",
-   "tags": [
-    "sports",
-    "feel-good",
-    "workplace"
-   ],
-   "title": "Ted Lasso",
-   "type": "Series",
-   "verified": false,
-   "year": 2020
   },
   {
    "audience": null,
@@ -659,23 +467,6 @@
   },
   {
    "audience": null,
-   "best": "Twelve perfect episodes. Watch Season 2 for the priest.",
-   "critics": 100,
-   "genre": "Comedy",
-   "id": "fleabag",
-   "service": "Prime Video",
-   "tags": [
-    "british",
-    "half-hour",
-    "dark-comedy"
-   ],
-   "title": "Fleabag",
-   "type": "Series",
-   "verified": false,
-   "year": 2016
-  },
-  {
-   "audience": null,
    "best": "A funny, violent wasteland adventure. You don't need to know the games.",
    "critics": 94,
    "genre": "Drama",
@@ -704,22 +495,6 @@
     "sports"
    ],
    "title": "One Night in Miami",
-   "type": "Movie",
-   "verified": false,
-   "year": 2020
-  },
-  {
-   "audience": null,
-   "best": "A drummer losing his hearing. Riz Ahmed is incredible.",
-   "critics": 97,
-   "genre": "Drama",
-   "id": "sound-of-metal",
-   "service": "Prime Video",
-   "tags": [
-    "music",
-    "character-study"
-   ],
-   "title": "Sound of Metal",
    "type": "Movie",
    "verified": false,
    "year": 2020
@@ -823,25 +598,6 @@
   },
   {
    "audience": null,
-   "best": "KGB spies posing as a suburban DC family. A slow-building marriage drama with Sopranos-level payoff.",
-   "critics": 96,
-   "genre": "Drama",
-   "id": "the-americans",
-   "service": "Hulu",
-   "tags": [
-    "spy",
-    "period",
-    "family-saga",
-    "prestige"
-   ],
-   "title": "The Americans",
-   "type": "Series",
-   "verified": false,
-   "year": 2013,
-   "url": "https://www.hulu.com/series/the-americans-6deba130-65fb-4816-acb1-aea5eb940f0f"
-  },
-  {
-   "audience": null,
    "best": "Small-town crime sagas, each season a new story. Start with Season 1 (Billy Bob Thornton).",
    "critics": 97,
    "genre": "Drama",
@@ -860,57 +616,109 @@
    "url": "https://www.hulu.com/series/fargo-203cda1b-7919-40fb-ab36-1e45b3ed2a50"
   },
   {
-   "audience": null,
-   "best": "A modern-day U.S. Marshal back home in Kentucky. Crime meets western, a natural next watch after Yellowstone.",
-   "critics": 90,
+   "id": "reacher",
+   "title": "Reacher",
+   "year": 2022,
+   "type": "Series",
+   "service": "Prime Video",
+   "critics": 98,
+   "audience": 74,
+   "genre": "Thriller",
+   "tags": [
+    "action",
+    "crime",
+    "thriller"
+   ],
+   "best": "Alan Ritchson as a hulking ex-MP solving crimes with his fists. Pure propulsive fun; Season 3 scored 98%.",
+   "verified": true
+  },
+  {
+   "id": "bosch-legacy",
+   "title": "Bosch: Legacy",
+   "year": 2022,
+   "type": "Series",
+   "service": "Prime Video",
+   "critics": 100,
+   "audience": 86,
    "genre": "Drama",
-   "id": "justified",
-   "service": "Hulu",
    "tags": [
     "crime",
-    "western",
+    "character-study",
+    "prestige"
+   ],
+   "best": "Harry Bosch goes private in L.A. Smart, grounded detective drama with a perfect critics score.",
+   "verified": true
+  },
+  {
+   "id": "ballard",
+   "title": "Ballard",
+   "year": 2025,
+   "type": "Series",
+   "service": "Prime Video",
+   "critics": 100,
+   "audience": 80,
+   "genre": "Drama",
+   "tags": [
+    "crime",
+    "mystery",
     "character-study"
    ],
-   "title": "Justified",
+   "best": "Maggie Q runs the LAPD cold-case unit in this Bosch spin-off. 100% from a small batch of reviews.",
+   "verified": true
+  },
+  {
+   "id": "mr-inbetween",
+   "title": "Mr Inbetween",
+   "year": 2018,
    "type": "Series",
-   "verified": false,
-   "year": 2010,
-   "url": "https://www.hulu.com/series/justified-2faf68df-e153-4e47-b117-a048427b250f"
-  },
-  {
-   "audience": null,
-   "best": "Casey Affleck's Oscar-winning turn as a grieving uncle. A pure character-driven drama.",
-   "critics": 96,
+   "service": "Hulu",
+   "url": "https://www.hulu.com/series/mr-inbetween-0c198187-f948-4ccd-b2b4-f5930ca4ac2f",
+   "critics": 95,
+   "audience": 97,
    "genre": "Drama",
-   "id": "manchester-by-the-sea",
-   "service": "Prime Video",
    "tags": [
-    "character-study",
-    "family"
+    "crime",
+    "dark-comedy",
+    "half-hour"
    ],
-   "title": "Manchester by the Sea",
-   "type": "Movie",
-   "verified": false,
-   "year": 2016
+   "best": "A hitman juggling fatherhood and jobs. Fast half-hours that critics compare to Breaking Bad and Barry.",
+   "verified": true
   },
   {
+   "id": "unbelievable",
+   "title": "Unbelievable",
+   "year": 2019,
+   "type": "Series",
+   "service": "Netflix",
+   "critics": 98,
    "audience": null,
-   "best": "A prisoner (Taron Egerton) befriends a suspected killer to win his freedom. Gripping from episode one.",
-   "critics": 96,
-   "genre": "Thriller",
-   "id": "black-bird",
-   "service": "Apple TV",
+   "genre": "Drama",
    "tags": [
     "crime",
     "true-story",
-    "limited-series",
-    "dark"
+    "limited-series"
    ],
-   "title": "Black Bird",
+   "best": "Two detectives chase a serial rapist in this true story. Eight gripping episodes, closer to Black Bird than to a slow burn.",
+   "verified": true
+  },
+  {
+   "id": "my-bad-monkey",
+   "title": "Bad Monkey",
+   "year": 2024,
    "type": "Series",
-   "verified": false,
-   "year": 2022
+   "service": "Apple TV",
+   "critics": 93,
+   "audience": null,
+   "genre": "Comedy",
+   "tags": [
+    "crime",
+    "dark-comedy",
+    "mystery"
+   ],
+   "best": "Added by you. Vince Vaughn as a demoted Florida Keys detective, from Bill Lawrence of Ted Lasso and Shrinking.",
+   "manual": true,
+   "verified": true
   }
  ],
- "updatedAt": "2026-11-14T00:30:00-08:00"
+ "updatedAt": "2026-11-13T17:40:00-08:00"
 }
