@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T01:24:04.353Z",
+ "updatedAt": "2026-11-14T01:24:07.353Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -728,25 +728,6 @@
     "best": "A modern-day U.S. Marshal back home in Kentucky. Crime meets western, a natural next watch after Yellowstone."
    },
    "rating": 4
-  },
-  "minx": {
-   "state": "skip",
-   "at": "2026-11-14T01:24:02.814Z",
-   "t": {
-    "title": "Minx",
-    "service": "Netflix",
-    "type": "Series",
-    "year": 2022,
-    "genre": "Comedy",
-    "tags": [
-     "period",
-     "workplace",
-     "half-hour"
-    ],
-    "critics": 95,
-    "audience": null,
-    "best": "A sharp, funny period comedy about launching a 1970s magazine. Watch it before the license ends."
-   }
   }
  }
 }
