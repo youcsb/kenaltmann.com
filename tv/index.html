@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Private page: not linked from the photography site, and search engines are asked to skip it. -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>90 Club</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="90 Club">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0A0B0F">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  :root { color-scheme: dark; --bg:#0A0B0F; --ink:#F4F5F7; --muted:#A3A8B4; --tomato:#FF5A3C; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+    background: radial-gradient(60% 45% at 50% 40%, rgba(255,90,60,.18), transparent 70%), var(--bg); }
+  main { max-width: 360px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 20px 40px rgba(0,0,0,.5); }
+  h1 { margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -.02em; }
+  h1 b { color: var(--tomato); }
+  p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+  a.open { display: inline-block; margin-top: 6px; background: var(--ink); color: #0A0B0F; text-decoration: none;
+    font-weight: 700; font-size: 17px; padding: 14px 28px; border-radius: 12px; }
+  a.open:focus-visible { outline: 2px solid var(--tomato); outline-offset: 3px; }
+  ol { text-align: left; color: var(--muted); font-size: 14px; line-height: 1.6; margin: 8px 0 0; padding-left: 20px; }
+  ol b { color: var(--ink); }
+  .status { font-size: 13px; min-height: 1.4em; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <img src="apple-touch-icon.png" alt="">
+  <h1>The <b>90</b> Club</h1>
+  <p id="lede">Tonight's best picks across your services, plus your teams' games.</p>
+  <a class="open" id="open" href="https://claude.ai/artifact/MSi6FDirLWSi1BN71ceMN6">Open The 90 Club</a>
+  <p class="status" id="status"></p>
+
+  <div id="install">
+    <p>To put it on your iPhone home screen:</p>
+    <ol>
+      <li>Open this page in <b>Safari</b>.</li>
+      <li>Tap the <b>Share</b> button, then <b>Add to Home Screen</b>.</li>
+      <li>Keep the name <b>90 Club</b> and tap <b>Add</b>.</li>
+    </ol>
+  </div>
+</main>
+<script>
+  // The dashboard itself lives on claude.ai, where your ratings and watchlist stay private.
+  // Opened from the home screen, this page goes straight there. Opened in a browser, it shows setup steps.
+  var DEST = "https://claude.ai/artifact/MSi6FDirLWSi1BN71ceMN6";
+  var launchedAsApp = window.navigator.standalone === true ||
+    (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) ||
+    /[?&]app=1/.test(location.search);
+  if (launchedAsApp) {
+    document.getElementById("install").hidden = true;
+    document.getElementById("status").textContent = "Opening…";
+    setTimeout(function () { location.replace(DEST); }, 250);
+  }
+</script>
+</body>
+</html>
