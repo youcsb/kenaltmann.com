@@ -450,7 +450,14 @@ async function load(){
 }
 
 render();
+let lastLoad=Date.now();
 load();
+// Home-screen apps on iPhone stay in memory between uses, so fetch fresh data
+// whenever the app comes back to the front after a few minutes away.
+function refreshIfStale(){if(document.visibilityState!=="visible")return;
+  if(Date.now()-lastLoad>3*60*1000){lastLoad=Date.now();load()}else if(pending.size)scheduleSync()}
+document.addEventListener("visibilitychange",refreshIfStale);
+window.addEventListener("pageshow",e=>{if(e.persisted)refreshIfStale()});
 </script>
 </body>
 </html>
