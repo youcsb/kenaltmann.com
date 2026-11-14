@@ -1,14 +1,20 @@
 {
  "map": {
   "13th": "posters/13th.jpg",
+  "abbott-elementary": "posters/abbott-elementary.jpg",
+  "adolescence": "posters/adolescence.jpg",
   "baby-reindeer": "posters/baby-reindeer.jpg",
   "black-bird": "posters/black-bird.jpg",
   "black-doves-s2": "posters/black-doves-s2.jpg",
+  "breaking-bad": "posters/breaking-bad.jpg",
   "carolina-caroline": "posters/carolina-caroline.jpg",
   "coda": "posters/coda.jpg",
+  "fallout": "posters/fallout.jpg",
+  "fargo": "posters/fargo.jpg",
   "free-solo": "posters/free-solo.jpg",
   "friday-night-lights": "posters/friday-night-lights.jpg",
   "get-back": "posters/get-back.jpg",
+  "glass-onion": "posters/glass-onion.jpg",
   "hamilton": "posters/hamilton.jpg",
   "justified": "posters/justified.jpg",
   "manchester-by-the-sea": "posters/manchester-by-the-sea.jpg",
@@ -19,12 +25,19 @@
   "one-night-in-miami": "posters/one-night-in-miami.jpg",
   "pachinko": "posters/pachinko.jpg",
   "palm-springs": "posters/palm-springs.jpg",
+  "shawshank": "posters/shawshank.jpg",
   "shogun": "posters/shogun.jpg",
   "sound-of-metal": "posters/sound-of-metal.jpg",
   "spotlight": "posters/spotlight.jpg",
+  "summer-of-soul": "posters/summer-of-soul.jpg",
   "ted-lasso": "posters/ted-lasso.jpg",
+  "the-americans": "posters/the-americans.jpg",
   "the-body": "posters/the-body.jpg",
   "the-departed": "posters/the-departed.jpg",
-  "the-social-network": "posters/the-social-network.jpg"
+  "the-irishman": "posters/the-irishman.jpg",
+  "the-office-us": "posters/the-office-us.jpg",
+  "the-social-network": "posters/the-social-network.jpg",
+  "the-sopranos": "posters/the-sopranos.jpg",
+  "the-wire": "posters/the-wire.jpg"
  }
 }
