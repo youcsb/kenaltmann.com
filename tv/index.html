@@ -237,6 +237,13 @@ function toggleMark(id,kind){const t=lookup(id);if(!t)return;const cur=state.mar
 function rate(id,n){const t=lookup(id);if(!t)return;const cur=state.marks[id];const body={...(cur||{}),state:"watched",at:new Date().toISOString(),t:snap(t)};
   if(cur?.rating===n)delete body.rating;else body.rating=n;return saveMark(id,body)}
 
+/* Where "Open in …" goes: the title's own page when we know it; otherwise a
+   jump to the first matching title page on that service (Hulu and Disney+
+   ignore search terms in links, so their search pages open empty). */
+const JUMP={"Hulu":"hulu.com","Disney+":"disneyplus.com","Apple TV":"tv.apple.com"};
+function watchUrl(t){if(t.url&&/^https:\/\//.test(t.url))return t.url;
+  const site=JUMP[t.service];if(site)return "https://duckduckgo.com/?q="+encodeURIComponent("!ducky site:"+site+" "+t.title);
+  const sv=SVC[t.service];return sv?sv.u+encodeURIComponent(t.title):"https://www.justwatch.com/us/search?q="+encodeURIComponent(t.title)}
 /* ---------- tiles ---------- */
 function tile(t,opts={}){const m=state.marks[t.id];const img=artOf(t.id);const sv=SVC[t.service];
   const flag=opts.flag||(t.leaving?'<span class="flag leave">Leaving</span>':t.added?'<span class="flag">New</span>':m?.state==="want"?'<span class="flag seen">My List</span>':"");
@@ -271,7 +278,7 @@ function render(){
     $("hero-best").textContent=t.best;
     $("hero-why").innerHTML=m.why?`Because you loved <b>${esc(m.why)}</b>`:"";
     const w=state.marks[t.id]?.state==="want";
-    $("hero-btns").innerHTML=`<a class="btn pri" href="${(sv?.u||"#")+encodeURIComponent(t.title)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg>Open in ${esc(t.service)}</a>
+    $("hero-btns").innerHTML=`<a class="btn pri" href="${watchUrl(t)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg>Open in ${esc(t.service)}</a>
       <button class="btn sec" data-id="${t.id}" data-mark="want" aria-pressed="${w}">${w?"✓ On My List":"+ My List"}</button>
       <button class="btn sec" data-open="${t.id}">Details</button>
       <button class="btn ghost" data-id="${t.id}" data-mark="skip">Not for me</button>`;}
@@ -331,7 +338,7 @@ function openSheet(id,refresh){const t=lookup(id);if(!t)return;if(!refresh)lastF
    <div class="sheet-body"><p>${esc(t.best)}</p>
      ${mt?.why?`<div class="why">Because you loved <b>${esc(mt.why)}</b></div>`:""}
      <div class="chips">${[t.genre,...(t.tags||[])].map(x=>`<span class="chip">${esc(String(x).replace(/-/g," "))}</span>`).join("")}${t.added?`<span class="chip">New ${fmtShort(t.added)}</span>`:""}${t.leaving?`<span class="chip" style="color:var(--warn)">${esc(t.leavingNote||"Leaving soon")}</span>`:""}</div>
-     <div class="btns">${sv?`<a class="btn pri" href="${sv.u+encodeURIComponent(t.title)}" target="_blank" rel="noopener">Open in ${esc(t.service)}</a>`:`<a class="btn pri" href="https://www.justwatch.com/us/search?q=${encodeURIComponent(t.title)}" target="_blank" rel="noopener">Find where to watch</a>`}
+     <div class="btns">${sv?`<a class="btn pri" href="${watchUrl(t)}" target="_blank" rel="noopener">Open in ${esc(t.service)}</a>`:`<a class="btn pri" href="https://www.justwatch.com/us/search?q=${encodeURIComponent(t.title)}" target="_blank" rel="noopener">Find where to watch</a>`}
        <button class="btn sec" data-id="${id}" data-mark="want" aria-pressed="${m?.state==="want"}">${m?.state==="want"?"✓ On My List":"+ My List"}</button>
        <button class="btn sec" data-id="${id}" data-mark="watched" aria-pressed="${m?.state==="watched"}">${m?.state==="watched"?"✓ Watched":"I've seen it"}</button>
        <button class="btn sec" data-id="${id}" data-mark="skip" aria-pressed="${m?.state==="skip"}">${m?.state==="skip"?"Passed":"Not for me"}</button></div>
