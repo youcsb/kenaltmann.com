@@ -215,7 +215,7 @@ const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&g
 function weightOf(m){if(m.state==="skip")return -1;if(m.state==="want")return .5;if(m.rating)return m.rating-3;return 0}
 const feats=t=>["g:"+t.genre,"y:"+t.type,...(t.tags||[]).map(x=>"t:"+x)];
 function buildTaste(){const sum={},n={};let votes=0;
-  for(const m of Object.values(state.marks)){const w=weightOf(m);if(!w||!m.t)continue;votes++;for(const f of feats(m.t)){sum[f]=(sum[f]||0)+w;n[f]=(n[f]||0)+1}}
+  for(const[id,m]of Object.entries(state.marks)){const w=weightOf(m);if(!w||!m.t)continue;votes++;const tt={...m.t,...(state.enrich?.[id]||{})};for(const f of feats(tt)){sum[f]=(sum[f]||0)+w;n[f]=(n[f]||0)+1}}
   const aff={};for(const f in sum)aff[f]=sum[f]/(n[f]+1);return{aff,votes}}
 const best=t=>Math.max(t.critics??0,t.audience??0);
 function overlap(a,b){return (a.tags||[]).filter(x=>(b.tags||[]).includes(x)).length+(a.genre===b.genre?.5:0)}
@@ -224,7 +224,7 @@ function matchOf(t,taste){const fs=feats(t);let s=0,k=0;for(const f of fs)if(tas
   return{score:best(t)+s*10,taste:s,pct:Math.max(50,Math.min(98,Math.round(74+s*16))),why:bo>=1.5?why:null}}
 
 /* ---------- helpers ---------- */
-function lookup(id){return state.feed?.titles.find(t=>t.id===id)||(state.marks[id]?.t?{id,...state.marks[id].t}:null)}
+function lookup(id){return state.feed?.titles.find(t=>t.id===id)||(state.marks[id]?.t?{id,...state.marks[id].t,...(state.enrich?.[id]||{})}:null)}
 const snap=t=>({title:t.title,service:t.service,type:t.type,year:t.year,genre:t.genre,tags:t.tags||[],critics:t.critics??null,audience:t.audience??null,best:t.best||""});
 const artOf=id=>state.art[id]||null;
 const svcColor=s=>`var(${SVC[s]?.c||"--muted"})`;
@@ -421,8 +421,10 @@ function openSettings(){state.open=null;lastFocus=document.activeElement;
 function openAddForm(){state.open=null;lastFocus=document.activeElement;
   $("sheet").innerHTML=`<button class="close" id="close" aria-label="Close">✕</button>
   <form class="sheet-body add-form" id="addf" style="padding-top:28px" autocomplete="off">
-   <h2 id="sheet-title" style="margin:0">Add to My List</h2>
-   <p>Got a recommendation? Save it here. Each morning Claude looks it up, adds the score, service and poster, and uses it to tune your picks.</p>
+   <h2 id="sheet-title" style="margin:0">Add a title</h2>
+   <p>Save a recommendation for later, or rate something you've already seen. Either way, Claude uses it to tune your picks.</p>
+   <div class="seg" role="radiogroup" aria-label="Have you seen it?"><label><input type="radio" name="add-state" value="want" checked><span>Want to watch</span></label><label><input type="radio" name="add-state" value="watched"><span>Already seen it</span></label></div>
+   <div class="rate" id="add-rate" role="group" aria-label="Your rating" hidden><span>Your rating</span>${[1,2,3,4,5].map(i=>`<button type="button" class="star" data-addrate="${i}" aria-label="${i} star${i>1?"s":""}">★</button>`).join("")}</div>
    <label class="lbl" for="add-title">Title</label>
    <input id="add-title" class="field" required placeholder="e.g. The Pitt" enterkeyhint="done">
    <span class="lbl">It's a</span>
@@ -434,11 +436,13 @@ function openAddForm(){state.open=null;lastFocus=document.activeElement;
    <label class="lbl" for="add-note">Note <small>(optional)</small></label>
    <input id="add-note" class="field" placeholder="e.g. Start with season 2">
    <p class="status" id="add-status"></p>
-   <div class="btns"><button class="btn pri" type="submit">Add to My List</button></div>
+   <div class="btns"><button class="btn pri" type="submit" id="add-go">Add to My List</button></div>
   </form>`;
   $("scrim").hidden=false;$("add-title").focus()}
 function saveManual(){const title=$("add-title").value.trim();if(!title){$("add-status").textContent="Type a title first.";return}
   const type=(document.querySelector('input[name="add-type"]:checked')||{}).value||"Series";
+  const state=(document.querySelector('input[name="add-state"]:checked')||{}).value||"want";
+  const rating=+($("add-rate").dataset.v||0);
   const svc=$("add-svc").value,who=$("add-who").value.trim(),note=$("add-note").value.trim();
   const norm=x=>x.toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
   const existing=state.feed?.titles.find(t=>norm(t.title)===norm(title));
@@ -447,9 +451,16 @@ function saveManual(){const title=$("add-title").value.trim();if(!title){$("add-
   const base=existing?snap(existing):{title,service:svc||"",type,year:null,genre:type==="Documentary"?"Documentary":"",tags:[],critics:null,audience:null,
     best:[who?`Recommended by ${who}.`:"Added by you.",note].filter(Boolean).join(" ")};
   if(who)base.recommendedBy=who; if(note)base.note=note;
-  saveMark(id,{state:"want",at:new Date().toISOString(),manual:!existing,t:base});
+  if(state==="watched"&&!who&&!existing)base.best=[ "Added by you.",note].filter(Boolean).join(" ");
+  const body={state,at:new Date().toISOString(),manual:!existing,t:base};if(state==="watched"&&rating)body.rating=rating;
+  saveMark(id,body);
+  if(state==="watched"){closeSheet();setTimeout(()=>document.getElementById("ratings")?.scrollIntoView({behavior:"smooth",block:"start"}),50);return}
   closeSheet();setTimeout(()=>document.getElementById("my-list")?.scrollIntoView({behavior:"smooth",block:"start"}),50)}
 document.addEventListener("submit",e=>{if(e.target.id==="addf"){e.preventDefault();saveManual()}});
+document.addEventListener("change",e=>{if(e.target.name!=="add-state")return;const seen=e.target.value==="watched";
+  $("add-rate").hidden=!seen;$("add-go").textContent=seen?"Save rating":"Add to My List"});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-addrate]");if(!b)return;const v=+b.dataset.addrate,box=$("add-rate");
+  box.dataset.v=box.dataset.v==v?"":v;box.querySelectorAll(".star").forEach(x=>x.classList.toggle("on",+x.dataset.addrate<=+(box.dataset.v||0)))});
 const actions={
   "add-title":openAddForm,
   settings:openSettings,
@@ -464,7 +475,8 @@ async function load(){
   updateSyncUI();
   const bust="?t="+Date.now();
   try{const[feed,art]=await Promise.all([fetch("data/feed.json"+bust).then(r=>{if(!r.ok)throw 0;return r.json()}),fetch("data/posters.json"+bust).then(r=>r.json()).catch(()=>({map:{}}))]);
-    state.feed=feed;state.art=art.map||{};render()}
+    state.feed=feed;state.art=art.map||{};render();
+    fetch("data/enrich.json"+bust).then(r=>r.ok?r.json():{titles:{}}).then(d=>{state.enrich=d.titles||{};render()}).catch(()=>{})}
   catch(e){$("hero-kick").textContent="Lineup unavailable";showNotice("Today's lineup didn't load. Check your connection and reopen the app.");return}
   try{const data=token?(await readRemote()).data:await fetch("data/ratings.json"+bust).then(r=>r.json());state.marks=applyPending(data.marks||{});persistLocal();render()}
   catch(e){if(token&&(e.status===401||e.status===403))syncError="auth"}
