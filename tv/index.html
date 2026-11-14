@@ -28,6 +28,8 @@
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:60;max-width:min(92vw,460px);background:var(--ink);color:#0A0B0F;font-weight:600;font-size:14px;line-height:1.35;padding:12px 16px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.5);transition:opacity .2s,transform .2s}
+#toast.on{opacity:1;transform:translate(-50%,0)}
 html{background:var(--bg)}
 body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 button{font-family:inherit}
@@ -241,12 +243,22 @@ function rate(id,n){const t=lookup(id);if(!t)return;const cur=state.marks[id];co
    jump to the first matching title page on that service (Hulu and Disney+
    ignore search terms in links, so their search pages open empty). */
 const JUMP={"Hulu":"hulu.com","Disney+":"disneyplus.com","Apple TV":"tv.apple.com"};
-function watchUrl(t){if(t.url&&/^https:\/\//.test(t.url))return t.url;
+function watchUrl(t){
+  if(t.service==="Hulu"&&t.url){const m=t.url.match(/hulu\.com\/(series|movie)\/(?:[a-z0-9-]*-)?([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i);
+    if(m)return `hulu://${m[1].toLowerCase()}/${m[2]}`}
+  if(t.url&&/^https:\/\//.test(t.url))return t.url;
   let site=JUMP[t.service];
   if(site){if(t.service==="Hulu")site+=t.type==="Series"?"/series":"/movie";
     const plain=String(t.title).normalize("NFD").replace(/[\u0300-\u036f]/g,"");
     return "https://duckduckgo.com/?q="+encodeURIComponent("!ducky site:"+site+" "+plain+(t.year?" "+t.year:""))}
   const sv=SVC[t.service];return sv?sv.u+encodeURIComponent(t.title):"https://www.justwatch.com/us/search?q="+encodeURIComponent(t.title)}
+/* Copy the title on "Open in …" so it can be pasted into the app's search if the app opens on its home screen. */
+document.addEventListener("click",e=>{const a=e.target.closest("a[data-copy]");if(!a)return;const title=a.dataset.copy;
+  const done=()=>toast(`"${title}" copied. If ${a.textContent.replace(/^\s*Open in\s*/,"").trim()||"the app"} opens on its home screen, tap Search and paste.`);
+  try{navigator.clipboard.writeText(title).then(done,()=>{})}catch(err){}
+  const href=a.getAttribute("href")||"";if(/^[a-z]+:\/\//i.test(href)&&!/^https?:/i.test(href)){e.preventDefault();setTimeout(()=>{location.href=href},60)}});
+function toast(msg){let el=document.getElementById("toast");if(!el){el=document.createElement("div");el.id="toast";el.setAttribute("role","status");document.body.appendChild(el)}
+  el.textContent=msg;el.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove("on"),6000)}
 /* ---------- tiles ---------- */
 function tile(t,opts={}){const m=state.marks[t.id];const img=artOf(t.id);const sv=SVC[t.service];
   const flag=opts.flag||(t.leaving?'<span class="flag leave">Leaving</span>':t.added?'<span class="flag">New</span>':m?.state==="want"?'<span class="flag seen">My List</span>':"");
@@ -281,7 +293,7 @@ function render(){
     $("hero-best").textContent=t.best;
     $("hero-why").innerHTML=m.why?`Because you loved <b>${esc(m.why)}</b>`:"";
     const w=state.marks[t.id]?.state==="want";
-    $("hero-btns").innerHTML=`<a class="btn pri" href="${watchUrl(t)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg>Open in ${esc(t.service)}</a>
+    $("hero-btns").innerHTML=`<a class="btn pri" href="${watchUrl(t)}" data-copy="${esc(t.title)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg>Open in ${esc(t.service)}</a>
       <button class="btn sec" data-id="${t.id}" data-mark="want" aria-pressed="${w}">${w?"✓ On My List":"+ My List"}</button>
       <button class="btn sec" data-open="${t.id}">Details</button>
       <button class="btn ghost" data-id="${t.id}" data-mark="skip">Not for me</button>`;}
@@ -341,7 +353,7 @@ function openSheet(id,refresh){const t=lookup(id);if(!t)return;if(!refresh)lastF
    <div class="sheet-body"><p>${esc(t.best)}</p>
      ${mt?.why?`<div class="why">Because you loved <b>${esc(mt.why)}</b></div>`:""}
      <div class="chips">${[t.genre,...(t.tags||[])].map(x=>`<span class="chip">${esc(String(x).replace(/-/g," "))}</span>`).join("")}${t.added?`<span class="chip">New ${fmtShort(t.added)}</span>`:""}${t.leaving?`<span class="chip" style="color:var(--warn)">${esc(t.leavingNote||"Leaving soon")}</span>`:""}</div>
-     <div class="btns">${sv?`<a class="btn pri" href="${watchUrl(t)}" target="_blank" rel="noopener">Open in ${esc(t.service)}</a>`:`<a class="btn pri" href="https://www.justwatch.com/us/search?q=${encodeURIComponent(t.title)}" target="_blank" rel="noopener">Find where to watch</a>`}
+     <div class="btns">${sv?`<a class="btn pri" href="${watchUrl(t)}" data-copy="${esc(t.title)}" target="_blank" rel="noopener">Open in ${esc(t.service)}</a>`:`<a class="btn pri" href="https://www.justwatch.com/us/search?q=${encodeURIComponent(t.title)}" target="_blank" rel="noopener">Find where to watch</a>`}
        <button class="btn sec" data-id="${id}" data-mark="want" aria-pressed="${m?.state==="want"}">${m?.state==="want"?"✓ On My List":"+ My List"}</button>
        <button class="btn sec" data-id="${id}" data-mark="watched" aria-pressed="${m?.state==="watched"}">${m?.state==="watched"?"✓ Watched":"I've seen it"}</button>
        <button class="btn sec" data-id="${id}" data-mark="skip" aria-pressed="${m?.state==="skip"}">${m?.state==="skip"?"Passed":"Not for me"}</button></div>
