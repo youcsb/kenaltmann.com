@@ -1,0 +1,906 @@
+{
+ "games": [
+  {
+   "channel": "Prime Video",
+   "id": "g1",
+   "league": "NBA",
+   "mine": true,
+   "note": "Two of your teams. NBA Cup game.",
+   "start": "2026-11-13T18:30:00-08:00",
+   "teams": "Warriors at Spurs"
+  },
+  {
+   "channel": "Check listing",
+   "id": "g2",
+   "league": "CFB",
+   "mine": true,
+   "note": "UCLA is 9-0. Rose Bowl, Friday night.",
+   "start": "2026-11-13T18:00:00-08:00",
+   "teams": "Illinois at UCLA"
+  },
+  {
+   "channel": "CBS",
+   "id": "g3",
+   "league": "CFB",
+   "mine": false,
+   "note": "UCLA's rival on the road.",
+   "start": "2026-11-14T12:30:00-08:00",
+   "teams": "USC at Indiana"
+  },
+  {
+   "channel": "NBC",
+   "id": "g4",
+   "league": "CFB",
+   "mine": false,
+   "note": "",
+   "start": "2026-11-14T12:30:00-08:00",
+   "teams": "Boston College at Notre Dame"
+  },
+  {
+   "channel": "ESPN",
+   "id": "g5",
+   "league": "CFB",
+   "mine": false,
+   "note": "Saturday night window.",
+   "start": "2026-11-14T18:30:00-08:00",
+   "teams": "Texas Tech at Oklahoma State"
+  },
+  {
+   "channel": "FOX",
+   "id": "g6",
+   "league": "NFL",
+   "mine": false,
+   "note": "Early-morning international game.",
+   "start": "2026-11-15T06:30:00-08:00",
+   "teams": "Patriots vs. Lions (Munich)"
+  },
+  {
+   "channel": "CBS",
+   "id": "g7",
+   "league": "NFL",
+   "mine": true,
+   "note": "Bye next week. Then at the 49ers on Nov 29.",
+   "start": "2026-11-15T13:05:00-08:00",
+   "teams": "Seahawks at Raiders"
+  },
+  {
+   "channel": "NBC",
+   "id": "g8",
+   "league": "NFL",
+   "mine": false,
+   "note": "Sunday Night Football. The AFC North lead is at stake.",
+   "start": "2026-11-15T17:20:00-08:00",
+   "teams": "Steelers at Bengals"
+  },
+  {
+   "channel": "Regional (DAZN)",
+   "id": "g9",
+   "league": "NBA",
+   "mine": true,
+   "note": "Not on your services.",
+   "start": "2026-11-15T14:00:00-08:00",
+   "teams": "Spurs at Jazz"
+  },
+  {
+   "channel": "ESPN",
+   "id": "g10",
+   "league": "NFL",
+   "mine": false,
+   "note": "Monday Night Football.",
+   "start": "2026-11-16T17:15:00-08:00",
+   "teams": "Chargers at Ravens"
+  },
+  {
+   "channel": "Regional",
+   "id": "g11",
+   "league": "NBA",
+   "mine": true,
+   "note": "First of two games in Minnesota.",
+   "start": "2026-11-16T18:00:00-08:00",
+   "teams": "Trail Blazers at Timberwolves"
+  },
+  {
+   "channel": "BTN",
+   "id": "g12",
+   "league": "CBB",
+   "mine": true,
+   "note": "",
+   "start": "2026-11-16T19:00:00-08:00",
+   "teams": "Long Beach State at UCLA"
+  },
+  {
+   "channel": "NBC Sports Bay Area / Peacock",
+   "id": "g13",
+   "league": "NBA",
+   "mine": true,
+   "note": "Tip time not confirmed yet.",
+   "start": "2026-11-16",
+   "tba": true,
+   "teams": "Warriors at Pelicans"
+  },
+  {
+   "channel": "NBC / Peacock",
+   "id": "g14",
+   "league": "NBA",
+   "mine": true,
+   "note": "",
+   "start": "2026-11-17T17:00:00-08:00",
+   "teams": "Pistons at Spurs"
+  },
+  {
+   "channel": "Regional",
+   "id": "g15",
+   "league": "NBA",
+   "mine": true,
+   "note": "",
+   "start": "2026-11-17T18:00:00-08:00",
+   "teams": "Trail Blazers at Timberwolves"
+  },
+  {
+   "channel": "ESPN",
+   "id": "g16",
+   "league": "NBA",
+   "mine": true,
+   "note": "Tip time not confirmed yet.",
+   "start": "2026-11-18",
+   "tba": true,
+   "teams": "Warriors at Mavericks"
+  },
+  {
+   "channel": "BTN",
+   "id": "g17",
+   "league": "CBB",
+   "mine": true,
+   "note": "",
+   "start": "2026-11-18T19:30:00-08:00",
+   "teams": "Cal State Fullerton at UCLA"
+  },
+  {
+   "channel": "Regional (DAZN)",
+   "id": "g18",
+   "league": "NBA",
+   "mine": true,
+   "note": "Not on your services.",
+   "start": "2026-11-19T17:00:00-08:00",
+   "teams": "Clippers at Spurs"
+  },
+  {
+   "channel": "Regional",
+   "id": "g19",
+   "league": "NBA",
+   "mine": true,
+   "note": "",
+   "start": "2026-11-19T18:00:00-08:00",
+   "teams": "Trail Blazers at Bucks"
+  },
+  {
+   "channel": "Regional (DAZN)",
+   "id": "g20",
+   "league": "NBA",
+   "mine": true,
+   "note": "Not on your services.",
+   "start": "2026-11-19",
+   "tba": true,
+   "teams": "Warriors at Grizzlies"
+  },
+  {
+   "channel": "TBA",
+   "id": "g21",
+   "league": "CFB",
+   "mine": true,
+   "note": "First UCLA game at the Big House since 1996.",
+   "start": "2026-11-21",
+   "tba": true,
+   "teams": "UCLA at Michigan"
+  },
+  {
+   "channel": "B1G+",
+   "id": "g22",
+   "league": "CBB",
+   "mine": true,
+   "note": "Streaming-only on B1G+.",
+   "start": "2026-11-22T16:00:00-08:00",
+   "teams": "Delaware at UCLA"
+  }
+ ],
+ "note": "Added titles matched to your ratings.",
+ "titles": [
+  {
+   "added": "2026-11-11",
+   "audience": 98,
+   "best": "The new must-watch: an eight-episode limited series that's #2 on Netflix worldwide.",
+   "critics": 100,
+   "genre": "Drama",
+   "id": "the-body",
+   "service": "Netflix",
+   "tags": [
+    "limited-series",
+    "mystery",
+    "dark"
+   ],
+   "title": "The Body",
+   "type": "Series",
+   "verified": true,
+   "year": 2026
+  },
+  {
+   "added": "2026-11-05",
+   "audience": null,
+   "best": "A London spy thriller with Keira Knightley. Season 1 scored 92%; start there if you're new.",
+   "critics": 94,
+   "genre": "Thriller",
+   "id": "black-doves-s2",
+   "service": "Netflix",
+   "tags": [
+    "spy",
+    "british",
+    "thriller"
+   ],
+   "title": "Black Doves, Season 2",
+   "type": "Series",
+   "verified": true,
+   "year": 2026
+  },
+  {
+   "added": "2026-11",
+   "audience": null,
+   "best": "Samara Weaving leads this new film. It scores 90% from 83 critics.",
+   "critics": 90,
+   "genre": "Drama",
+   "id": "carolina-caroline",
+   "service": "Netflix",
+   "tags": [
+    "character-study"
+   ],
+   "title": "Carolina Caroline",
+   "type": "Movie",
+   "verified": true,
+   "year": 2026
+  },
+  {
+   "audience": null,
+   "best": "A sharp, funny period comedy about launching a 1970s magazine. Watch it before the license ends.",
+   "critics": 95,
+   "genre": "Comedy",
+   "id": "minx",
+   "leaving": "2026-11",
+   "leavingNote": "Leaving Netflix in November",
+   "service": "Netflix",
+   "tags": [
+    "period",
+    "workplace",
+    "half-hour"
+   ],
+   "title": "Minx",
+   "type": "Series",
+   "verified": true,
+   "year": 2022
+  },
+  {
+   "audience": null,
+   "best": "Four episodes, each filmed in one unbroken take. Gripping and short.",
+   "critics": 98,
+   "genre": "Drama",
+   "id": "adolescence",
+   "service": "Netflix",
+   "tags": [
+    "limited-series",
+    "british",
+    "crime",
+    "dark"
+   ],
+   "title": "Adolescence",
+   "type": "Series",
+   "verified": false,
+   "year": 2025
+  },
+  {
+   "audience": null,
+   "best": "A dark, true-ish stalker story that swept the Emmys. Seven episodes.",
+   "critics": 98,
+   "genre": "Drama",
+   "id": "baby-reindeer",
+   "service": "Netflix",
+   "tags": [
+    "limited-series",
+    "british",
+    "dark",
+    "true-story"
+   ],
+   "title": "Baby Reindeer",
+   "type": "Series",
+   "verified": false,
+   "year": 2024
+  },
+  {
+   "audience": null,
+   "best": "A road-rage feud that spirals. Darkly funny with real drama underneath.",
+   "critics": 98,
+   "genre": "Comedy",
+   "id": "beef",
+   "service": "Netflix",
+   "tags": [
+    "dark-comedy",
+    "limited-series"
+   ],
+   "title": "Beef",
+   "type": "Series",
+   "verified": false,
+   "year": 2023
+  },
+  {
+   "audience": null,
+   "best": "An easy, warm romantic comedy with Kristen Bell and Adam Brody. Half-hour episodes.",
+   "critics": 93,
+   "genre": "Comedy",
+   "id": "nobody-wants-this",
+   "service": "Netflix",
+   "tags": [
+    "romance",
+    "half-hour",
+    "feel-good"
+   ],
+   "title": "Nobody Wants This",
+   "type": "Series",
+   "verified": false,
+   "year": 2024
+  },
+  {
+   "audience": null,
+   "best": "David Fincher's FBI profiler drama. Two complete seasons.",
+   "critics": 97,
+   "genre": "Drama",
+   "id": "mindhunter",
+   "service": "Netflix",
+   "tags": [
+    "crime",
+    "true-story",
+    "dark"
+   ],
+   "title": "Mindhunter",
+   "type": "Series",
+   "verified": false,
+   "year": 2017
+  },
+  {
+   "audience": null,
+   "best": "A crowd-pleasing whodunit for a Friday night.",
+   "critics": 92,
+   "genre": "Comedy",
+   "id": "glass-onion",
+   "service": "Netflix",
+   "tags": [
+    "mystery",
+    "ensemble",
+    "feel-good"
+   ],
+   "title": "Glass Onion",
+   "type": "Movie",
+   "verified": false,
+   "year": 2022
+  },
+  {
+   "audience": null,
+   "best": "Scorsese, De Niro, Pacino. Save it for a long Sunday.",
+   "critics": 95,
+   "genre": "Drama",
+   "id": "the-irishman",
+   "service": "Netflix",
+   "tags": [
+    "crime",
+    "epic",
+    "true-story"
+   ],
+   "title": "The Irishman",
+   "type": "Movie",
+   "verified": false,
+   "year": 2019
+  },
+  {
+   "audience": null,
+   "best": "Big, prestige historical epic set in feudal Japan. It won a record 18 Emmys.",
+   "critics": 99,
+   "genre": "Drama",
+   "id": "shogun",
+   "service": "Hulu",
+   "tags": [
+    "epic",
+    "period",
+    "prestige"
+   ],
+   "title": "Shōgun",
+   "type": "Series",
+   "verified": false,
+   "year": 2024
+  },
+  {
+   "audience": null,
+   "best": "An intense kitchen drama with comedy in the cracks. Season 1 is near-perfect.",
+   "critics": 99,
+   "genre": "Comedy",
+   "id": "the-bear",
+   "service": "Hulu",
+   "tags": [
+    "workplace",
+    "intense",
+    "half-hour",
+    "prestige"
+   ],
+   "title": "The Bear",
+   "type": "Series",
+   "verified": false,
+   "year": 2022
+  },
+  {
+   "audience": null,
+   "best": "A feel-good workplace mockumentary. The best network sitcom running.",
+   "critics": 98,
+   "genre": "Comedy",
+   "id": "abbott-elementary",
+   "service": "Hulu",
+   "tags": [
+    "workplace",
+    "mockumentary",
+    "half-hour",
+    "feel-good"
+   ],
+   "title": "Abbott Elementary",
+   "type": "Series",
+   "verified": false,
+   "year": 2021
+  },
+  {
+   "audience": null,
+   "best": "Martin, Short and Gomez solve murders. Cozy comedy-mystery.",
+   "critics": 99,
+   "genre": "Comedy",
+   "id": "only-murders",
+   "service": "Hulu",
+   "tags": [
+    "mystery",
+    "half-hour",
+    "feel-good"
+   ],
+   "title": "Only Murders in the Building",
+   "type": "Series",
+   "verified": false,
+   "year": 2021
+  },
+  {
+   "audience": null,
+   "best": "Vampire roommates on Staten Island. Pure silly comedy, six seasons.",
+   "critics": 95,
+   "genre": "Comedy",
+   "id": "shadows",
+   "service": "Hulu",
+   "tags": [
+    "mockumentary",
+    "half-hour",
+    "absurd"
+   ],
+   "title": "What We Do in the Shadows",
+   "type": "Series",
+   "verified": false,
+   "year": 2019
+  },
+  {
+   "audience": null,
+   "best": "A funny, tender coming-of-age show set in rural Oklahoma.",
+   "critics": 99,
+   "genre": "Comedy",
+   "id": "reservation-dogs",
+   "service": "Hulu",
+   "tags": [
+    "coming-of-age",
+    "half-hour"
+   ],
+   "title": "Reservation Dogs",
+   "type": "Series",
+   "verified": false,
+   "year": 2021
+  },
+  {
+   "audience": null,
+   "best": "A time-loop rom-com with Andy Samberg. 90 minutes of fun.",
+   "critics": 94,
+   "genre": "Comedy",
+   "id": "palm-springs",
+   "service": "Hulu",
+   "tags": [
+    "romance",
+    "time-loop",
+    "feel-good"
+   ],
+   "title": "Palm Springs",
+   "type": "Movie",
+   "verified": false,
+   "year": 2020
+  },
+  {
+   "audience": null,
+   "best": "Star Wars for grown-ups: a political spy thriller. Two complete seasons.",
+   "critics": 94,
+   "genre": "Drama",
+   "id": "andor",
+   "service": "Disney+",
+   "tags": [
+    "sci-fi",
+    "spy",
+    "prestige"
+   ],
+   "title": "Andor",
+   "type": "Series",
+   "verified": false,
+   "year": 2022
+  },
+  {
+   "audience": null,
+   "best": "The original Broadway cast, filmed live.",
+   "critics": 98,
+   "genre": "Drama",
+   "id": "hamilton",
+   "service": "Disney+",
+   "tags": [
+    "musical",
+    "period"
+   ],
+   "title": "Hamilton",
+   "type": "Movie",
+   "verified": false,
+   "year": 2020
+  },
+  {
+   "audience": null,
+   "best": "A workplace mystery that's eerie and funny. The best show on Apple TV.",
+   "critics": 96,
+   "genre": "Drama",
+   "id": "severance",
+   "service": "Apple TV",
+   "tags": [
+    "mystery",
+    "sci-fi",
+    "workplace",
+    "prestige"
+   ],
+   "title": "Severance",
+   "type": "Series",
+   "verified": false,
+   "year": 2022
+  },
+  {
+   "audience": null,
+   "best": "Gary Oldman leads a crew of washed-up spies. Short, tight seasons.",
+   "critics": 97,
+   "genre": "Thriller",
+   "id": "slow-horses",
+   "service": "Apple TV",
+   "tags": [
+    "spy",
+    "british",
+    "dark-comedy"
+   ],
+   "title": "Slow Horses",
+   "type": "Series",
+   "verified": false,
+   "year": 2022
+  },
+  {
+   "audience": null,
+   "best": "A feel-good comedy about an American coaching English soccer.",
+   "critics": 92,
+   "genre": "Comedy",
+   "id": "ted-lasso",
+   "service": "Apple TV",
+   "tags": [
+    "sports",
+    "feel-good",
+    "workplace"
+   ],
+   "title": "Ted Lasso",
+   "type": "Series",
+   "verified": false,
+   "year": 2020
+  },
+  {
+   "audience": null,
+   "best": "Seth Rogen sends up Hollywood in fast, sharp half-hours.",
+   "critics": 93,
+   "genre": "Comedy",
+   "id": "the-studio",
+   "service": "Apple TV",
+   "tags": [
+    "workplace",
+    "half-hour",
+    "satire"
+   ],
+   "title": "The Studio",
+   "type": "Series",
+   "verified": false,
+   "year": 2025
+  },
+  {
+   "audience": null,
+   "best": "A gorgeous multi-generation family saga.",
+   "critics": 98,
+   "genre": "Drama",
+   "id": "pachinko",
+   "service": "Apple TV",
+   "tags": [
+    "epic",
+    "period",
+    "family-saga"
+   ],
+   "title": "Pachinko",
+   "type": "Series",
+   "verified": false,
+   "year": 2022
+  },
+  {
+   "audience": null,
+   "best": "Best Picture winner and a guaranteed crowd-pleaser.",
+   "critics": 95,
+   "genre": "Drama",
+   "id": "coda",
+   "service": "Apple TV",
+   "tags": [
+    "feel-good",
+    "family"
+   ],
+   "title": "CODA",
+   "type": "Movie",
+   "verified": false,
+   "year": 2021
+  },
+  {
+   "audience": null,
+   "best": "Twelve perfect episodes. Watch Season 2 for the priest.",
+   "critics": 100,
+   "genre": "Comedy",
+   "id": "fleabag",
+   "service": "Prime Video",
+   "tags": [
+    "british",
+    "half-hour",
+    "dark-comedy"
+   ],
+   "title": "Fleabag",
+   "type": "Series",
+   "verified": false,
+   "year": 2016
+  },
+  {
+   "audience": null,
+   "best": "A funny, violent wasteland adventure. You don't need to know the games.",
+   "critics": 94,
+   "genre": "Drama",
+   "id": "fallout",
+   "service": "Prime Video",
+   "tags": [
+    "sci-fi",
+    "action",
+    "dark-comedy"
+   ],
+   "title": "Fallout",
+   "type": "Series",
+   "verified": false,
+   "year": 2024
+  },
+  {
+   "audience": null,
+   "best": "Ali, Malcolm X, Jim Brown and Sam Cooke in one room for one night.",
+   "critics": 98,
+   "genre": "Drama",
+   "id": "one-night-in-miami",
+   "service": "Prime Video",
+   "tags": [
+    "true-story",
+    "period",
+    "sports"
+   ],
+   "title": "One Night in Miami",
+   "type": "Movie",
+   "verified": false,
+   "year": 2020
+  },
+  {
+   "audience": null,
+   "best": "A drummer losing his hearing. Riz Ahmed is incredible.",
+   "critics": 97,
+   "genre": "Drama",
+   "id": "sound-of-metal",
+   "service": "Prime Video",
+   "tags": [
+    "music",
+    "character-study"
+   ],
+   "title": "Sound of Metal",
+   "type": "Movie",
+   "verified": false,
+   "year": 2020
+  },
+  {
+   "audience": null,
+   "best": "Ava DuVernay's essential look at race and prisons in America.",
+   "critics": 97,
+   "genre": "Documentary",
+   "id": "13th",
+   "service": "Netflix",
+   "tags": [
+    "history",
+    "social-issues"
+   ],
+   "title": "13th",
+   "type": "Documentary",
+   "verified": false,
+   "year": 2016
+  },
+  {
+   "audience": null,
+   "best": "A quiet, moving nature story and an Oscar winner.",
+   "critics": 95,
+   "genre": "Documentary",
+   "id": "octopus-teacher",
+   "service": "Netflix",
+   "tags": [
+    "nature"
+   ],
+   "title": "My Octopus Teacher",
+   "type": "Documentary",
+   "verified": false,
+   "year": 2020
+  },
+  {
+   "audience": null,
+   "best": "Lost concert footage from the 1969 Harlem Cultural Festival. Joyful.",
+   "critics": 99,
+   "genre": "Documentary",
+   "id": "summer-of-soul",
+   "service": "Hulu",
+   "tags": [
+    "music",
+    "history"
+   ],
+   "title": "Summer of Soul",
+   "type": "Documentary",
+   "verified": false,
+   "year": 2021
+  },
+  {
+   "audience": null,
+   "best": "Alex Honnold climbs El Capitan with no rope. Sweaty palms guaranteed.",
+   "critics": 97,
+   "genre": "Documentary",
+   "id": "free-solo",
+   "service": "Disney+",
+   "tags": [
+    "sports",
+    "adventure"
+   ],
+   "title": "Free Solo",
+   "type": "Documentary",
+   "verified": false,
+   "year": 2018
+  },
+  {
+   "audience": null,
+   "best": "Two volcanologists in love, told through their own stunning footage.",
+   "critics": 98,
+   "genre": "Documentary",
+   "id": "fire-of-love",
+   "service": "Disney+",
+   "tags": [
+    "nature",
+    "adventure",
+    "romance"
+   ],
+   "title": "Fire of Love",
+   "type": "Documentary",
+   "verified": false,
+   "year": 2022
+  },
+  {
+   "audience": null,
+   "best": "Peter Jackson's fly-on-the-wall Beatles epic. Best in chunks.",
+   "critics": 94,
+   "genre": "Documentary",
+   "id": "get-back",
+   "service": "Disney+",
+   "tags": [
+    "music",
+    "history"
+   ],
+   "title": "The Beatles: Get Back",
+   "type": "Documentary",
+   "verified": false,
+   "year": 2021
+  },
+  {
+   "audience": null,
+   "best": "KGB spies posing as a suburban DC family. A slow-building marriage drama with Sopranos-level payoff.",
+   "critics": 96,
+   "genre": "Drama",
+   "id": "the-americans",
+   "service": "Hulu",
+   "tags": [
+    "spy",
+    "period",
+    "family-saga",
+    "prestige"
+   ],
+   "title": "The Americans",
+   "type": "Series",
+   "verified": false,
+   "year": 2013
+  },
+  {
+   "audience": null,
+   "best": "Small-town crime sagas, each season a new story. Start with Season 1 (Billy Bob Thornton).",
+   "critics": 97,
+   "genre": "Drama",
+   "id": "fargo",
+   "service": "Hulu",
+   "tags": [
+    "crime",
+    "dark-comedy",
+    "ensemble",
+    "prestige"
+   ],
+   "title": "Fargo",
+   "type": "Series",
+   "verified": false,
+   "year": 2014
+  },
+  {
+   "audience": null,
+   "best": "A modern-day U.S. Marshal back home in Kentucky. Crime meets western, a natural next watch after Yellowstone.",
+   "critics": 90,
+   "genre": "Drama",
+   "id": "justified",
+   "service": "Hulu",
+   "tags": [
+    "crime",
+    "western",
+    "character-study"
+   ],
+   "title": "Justified",
+   "type": "Series",
+   "verified": false,
+   "year": 2010
+  },
+  {
+   "audience": null,
+   "best": "Casey Affleck's Oscar-winning turn as a grieving uncle. A pure character-driven drama.",
+   "critics": 96,
+   "genre": "Drama",
+   "id": "manchester-by-the-sea",
+   "service": "Prime Video",
+   "tags": [
+    "character-study",
+    "family"
+   ],
+   "title": "Manchester by the Sea",
+   "type": "Movie",
+   "verified": false,
+   "year": 2016
+  },
+  {
+   "audience": null,
+   "best": "A prisoner (Taron Egerton) befriends a suspected killer to win his freedom. Gripping from episode one.",
+   "critics": 96,
+   "genre": "Thriller",
+   "id": "black-bird",
+   "service": "Apple TV",
+   "tags": [
+    "crime",
+    "true-story",
+    "limited-series",
+    "dark"
+   ],
+   "title": "Black Bird",
+   "type": "Series",
+   "verified": false,
+   "year": 2022
+  }
+ ],
+ "updatedAt": "2026-11-14T00:30:00-08:00"
+}

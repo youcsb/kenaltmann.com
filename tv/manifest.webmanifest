@@ -1,7 +1,7 @@
 {
   "name": "The 90 Club",
   "short_name": "90 Club",
-  "start_url": "./?app=1",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0A0B0F",

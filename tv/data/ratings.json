@@ -1,0 +1,625 @@
+{
+ "updatedAt": "2026-11-14T00:30:00-08:00",
+ "marks": {
+  "abbott-elementary": {
+   "at": "2026-11-14T00:14:28.640Z",
+   "state": "skip",
+   "t": {
+    "audience": null,
+    "best": "A feel-good workplace mockumentary. The best network sitcom running.",
+    "critics": 98,
+    "genre": "Comedy",
+    "service": "Hulu",
+    "tags": [
+     "workplace",
+     "mockumentary",
+     "half-hour",
+     "feel-good"
+    ],
+    "title": "Abbott Elementary",
+    "type": "Series",
+    "year": 2021
+   }
+  },
+  "adolescence": {
+   "at": "2026-11-14T00:14:33.838Z",
+   "state": "skip",
+   "t": {
+    "audience": null,
+    "best": "Four episodes, each filmed in one unbroken take. Gripping and short.",
+    "critics": 98,
+    "genre": "Drama",
+    "service": "Netflix",
+    "tags": [
+     "limited-series",
+     "british",
+     "crime",
+     "dark"
+    ],
+    "title": "Adolescence",
+    "type": "Series",
+    "year": 2025
+   }
+  },
+  "baby-reindeer": {
+   "at": "2026-11-13T23:42:40.423Z",
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "A dark, true-ish stalker story that swept the Emmys. Seven episodes.",
+    "critics": 98,
+    "genre": "Drama",
+    "service": "Netflix",
+    "tags": [
+     "limited-series",
+     "british",
+     "dark",
+     "true-story"
+    ],
+    "title": "Baby Reindeer",
+    "type": "Series",
+    "year": 2024
+   }
+  },
+  "beef": {
+   "at": "2026-11-14T00:14:58.254Z",
+   "rating": 2,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "A road-rage feud that spirals. Darkly funny with real drama underneath.",
+    "critics": 98,
+    "genre": "Comedy",
+    "service": "Netflix",
+    "tags": [
+     "dark-comedy",
+     "limited-series"
+    ],
+    "title": "Beef",
+    "type": "Series",
+    "year": 2023
+   }
+  },
+  "black-bird": {
+   "at": "2026-11-14T00:10:36.634Z",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "A prisoner (Taron Egerton) befriends a suspected killer to win his freedom. Gripping from episode one.",
+    "critics": 96,
+    "genre": "Thriller",
+    "service": "Apple TV",
+    "tags": [
+     "crime",
+     "true-story",
+     "limited-series",
+     "dark"
+    ],
+    "title": "Black Bird",
+    "type": "Series",
+    "year": 2022
+   }
+  },
+  "breaking-bad": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "An all-time favorite.",
+    "critics": 96,
+    "genre": "Drama",
+    "service": "Netflix",
+    "tags": [
+     "crime",
+     "dark",
+     "character-study",
+     "prestige"
+    ],
+    "title": "Breaking Bad",
+    "type": "Series",
+    "year": 2008
+   }
+  },
+  "fleabag": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Loved it.",
+    "critics": 100,
+    "genre": "Comedy",
+    "service": "Prime Video",
+    "tags": [
+     "british",
+     "half-hour",
+     "dark-comedy"
+    ],
+    "title": "Fleabag",
+    "type": "Series",
+    "year": 2016
+   }
+  },
+  "friday-night-lights": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Loved it.",
+    "critics": 92,
+    "genre": "Drama",
+    "service": "Other",
+    "tags": [
+     "sports",
+     "family",
+     "character-study",
+     "feel-good"
+    ],
+    "title": "Friday Night Lights",
+    "type": "Series",
+    "year": 2006
+   }
+  },
+  "hamilton": {
+   "at": "2026-11-13T23:42:41.192Z",
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "The original Broadway cast, filmed live.",
+    "critics": 98,
+    "genre": "Drama",
+    "service": "Disney+",
+    "tags": [
+     "musical",
+     "period"
+    ],
+    "title": "Hamilton",
+    "type": "Movie",
+    "year": 2020
+   }
+  },
+  "manchester-by-the-sea": {
+   "at": "2026-11-14T00:10:45.111Z",
+   "state": "skip",
+   "t": {
+    "audience": null,
+    "best": "Casey Affleck's Oscar-winning turn as a grieving uncle. A pure character-driven drama.",
+    "critics": 96,
+    "genre": "Drama",
+    "service": "Prime Video",
+    "tags": [
+     "character-study",
+     "family"
+    ],
+    "title": "Manchester by the Sea",
+    "type": "Movie",
+    "year": 2016
+   }
+  },
+  "moneyball": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 4,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Liked it.",
+    "critics": 94,
+    "genre": "Drama",
+    "service": "Other",
+    "tags": [
+     "sports",
+     "true-story",
+     "character-study"
+    ],
+    "title": "Moneyball",
+    "type": "Movie",
+    "year": 2011
+   }
+  },
+  "no-country-for-old-men": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 2,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Didn't land.",
+    "critics": 93,
+    "genre": "Thriller",
+    "service": "Other",
+    "tags": [
+     "crime",
+     "thriller",
+     "dark"
+    ],
+    "title": "No Country for Old Men",
+    "type": "Movie",
+    "year": 2007
+   }
+  },
+  "one-night-in-miami": {
+   "at": "2026-11-14T00:07:52.520Z",
+   "state": "want",
+   "t": {
+    "audience": null,
+    "best": "Ali, Malcolm X, Jim Brown and Sam Cooke in one room for one night.",
+    "critics": 98,
+    "genre": "Drama",
+    "service": "Prime Video",
+    "tags": [
+     "true-story",
+     "period",
+     "sports"
+    ],
+    "title": "One Night in Miami",
+    "type": "Movie",
+    "year": 2020
+   }
+  },
+  "only-murders": {
+   "at": "2026-11-13T23:42:23.123Z",
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Martin, Short and Gomez solve murders. Cozy comedy-mystery.",
+    "critics": 99,
+    "genre": "Comedy",
+    "service": "Hulu",
+    "tags": [
+     "mystery",
+     "half-hour",
+     "feel-good"
+    ],
+    "title": "Only Murders in the Building",
+    "type": "Series",
+    "year": 2021
+   }
+  },
+  "ozark": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Loved it.",
+    "critics": 82,
+    "genre": "Drama",
+    "service": "Netflix",
+    "tags": [
+     "crime",
+     "family-saga",
+     "thriller",
+     "dark"
+    ],
+    "title": "Ozark",
+    "type": "Series",
+    "year": 2017
+   }
+  },
+  "reservation-dogs": {
+   "at": "2026-11-13T23:42:24.831Z",
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "A funny, tender coming-of-age show set in rural Oklahoma.",
+    "critics": 99,
+    "genre": "Comedy",
+    "service": "Hulu",
+    "tags": [
+     "coming-of-age",
+     "half-hour"
+    ],
+    "title": "Reservation Dogs",
+    "type": "Series",
+    "year": 2021
+   }
+  },
+  "severance": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Loved it.",
+    "critics": 96,
+    "genre": "Drama",
+    "service": "Apple TV",
+    "tags": [
+     "mystery",
+     "sci-fi",
+     "workplace",
+     "prestige"
+    ],
+    "title": "Severance",
+    "type": "Series",
+    "year": 2022
+   }
+  },
+  "shawshank": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "An all-time favorite.",
+    "critics": 89,
+    "genre": "Drama",
+    "service": "Other",
+    "tags": [
+     "character-study",
+     "crime",
+     "feel-good"
+    ],
+    "title": "The Shawshank Redemption",
+    "type": "Movie",
+    "year": 1994
+   }
+  },
+  "shrinking": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "An all-time favorite.",
+    "critics": 91,
+    "genre": "Comedy",
+    "service": "Apple TV",
+    "tags": [
+     "feel-good",
+     "half-hour",
+     "ensemble",
+     "character-study"
+    ],
+    "title": "Shrinking",
+    "type": "Series",
+    "year": 2023
+   }
+  },
+  "slow-horses": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "note": "Couldn't get through the first episode.",
+   "rating": 2,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Quit in episode 1.",
+    "critics": 97,
+    "genre": "Thriller",
+    "service": "Apple TV",
+    "tags": [
+     "spy",
+     "british",
+     "dark-comedy"
+    ],
+    "title": "Slow Horses",
+    "type": "Series",
+    "year": 2022
+   }
+  },
+  "sound-of-metal": {
+   "at": "2026-11-14T00:14:49.387Z",
+   "state": "skip",
+   "t": {
+    "audience": null,
+    "best": "A drummer losing his hearing. Riz Ahmed is incredible.",
+    "critics": 97,
+    "genre": "Drama",
+    "service": "Prime Video",
+    "tags": [
+     "music",
+     "character-study"
+    ],
+    "title": "Sound of Metal",
+    "type": "Movie",
+    "year": 2020
+   }
+  },
+  "spotlight": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 4,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Liked it.",
+    "critics": 97,
+    "genre": "Drama",
+    "service": "Other",
+    "tags": [
+     "true-story",
+     "ensemble",
+     "social-issues"
+    ],
+    "title": "Spotlight",
+    "type": "Movie",
+    "year": 2015
+   }
+  },
+  "succession": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "note": "Quit after a couple of episodes; heard he'd love it, open to retrying.",
+   "rating": 2,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Didn't hook you early. Worth another try past episode 3.",
+    "critics": 94,
+    "genre": "Drama",
+    "service": "HBO Max",
+    "tags": [
+     "family-saga",
+     "satire",
+     "dark-comedy"
+    ],
+    "title": "Succession",
+    "type": "Series",
+    "year": 2018
+   }
+  },
+  "ted-lasso": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 4,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Liked it.",
+    "critics": 92,
+    "genre": "Comedy",
+    "service": "Apple TV",
+    "tags": [
+     "sports",
+     "feel-good",
+     "workplace"
+    ],
+    "title": "Ted Lasso",
+    "type": "Series",
+    "year": 2020
+   }
+  },
+  "the-bear": {
+   "at": "2026-11-13T23:42:29.587Z",
+   "state": "want",
+   "t": {
+    "audience": null,
+    "best": "An intense kitchen drama with comedy in the cracks. Season 1 is near-perfect.",
+    "critics": 99,
+    "genre": "Comedy",
+    "service": "Hulu",
+    "tags": [
+     "workplace",
+     "intense",
+     "half-hour",
+     "prestige"
+    ],
+    "title": "The Bear",
+    "type": "Series",
+    "year": 2022
+   }
+  },
+  "the-departed": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Loved it.",
+    "critics": 91,
+    "genre": "Drama",
+    "service": "Other",
+    "tags": [
+     "crime",
+     "thriller",
+     "ensemble"
+    ],
+    "title": "The Departed",
+    "type": "Movie",
+    "year": 2006
+   }
+  },
+  "the-office-us": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Loved it.",
+    "critics": 81,
+    "genre": "Comedy",
+    "service": "Peacock",
+    "tags": [
+     "workplace",
+     "mockumentary",
+     "half-hour",
+     "feel-good"
+    ],
+    "title": "The Office (US)",
+    "type": "Series",
+    "year": 2005
+   }
+  },
+  "the-social-network": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 2,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Didn't land.",
+    "critics": 96,
+    "genre": "Drama",
+    "service": "Other",
+    "tags": [
+     "true-story",
+     "business"
+    ],
+    "title": "The Social Network",
+    "type": "Movie",
+    "year": 2010
+   }
+  },
+  "the-sopranos": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Loved it.",
+    "critics": 92,
+    "genre": "Drama",
+    "service": "HBO Max",
+    "tags": [
+     "crime",
+     "family-saga",
+     "dark",
+     "prestige"
+    ],
+    "title": "The Sopranos",
+    "type": "Series",
+    "year": 1999
+   }
+  },
+  "the-wire": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "An all-time favorite.",
+    "critics": 94,
+    "genre": "Drama",
+    "service": "HBO Max",
+    "tags": [
+     "crime",
+     "ensemble",
+     "prestige",
+     "social-issues"
+    ],
+    "title": "The Wire",
+    "type": "Series",
+    "year": 2002
+   }
+  },
+  "yellowstone": {
+   "at": "2026-11-13T16:00:00-08:00",
+   "rating": 5,
+   "state": "watched",
+   "t": {
+    "audience": null,
+    "best": "Loved it.",
+    "critics": null,
+    "genre": "Drama",
+    "service": "Peacock",
+    "tags": [
+     "family-saga",
+     "western",
+     "crime",
+     "epic"
+    ],
+    "title": "Yellowstone",
+    "type": "Series",
+    "year": 2018
+   }
+  }
+ }
+}
