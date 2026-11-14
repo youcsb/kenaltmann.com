@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T17:42:52.993Z",
+ "updatedAt": "2026-11-14T17:43:04.954Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -818,20 +818,25 @@
   },
   "my-west-wing": {
    "state": "watched",
-   "at": "2026-11-14T02:44:11.518Z",
+   "at": "2026-11-14T17:43:01.459Z",
    "t": {
-    "title": "West wing",
+    "title": "The West Wing",
     "service": "",
     "type": "Series",
-    "year": null,
-    "genre": "",
-    "tags": [],
-    "critics": null,
+    "year": 1999,
+    "genre": "Drama",
+    "tags": [
+     "workplace",
+     "ensemble",
+     "prestige"
+    ],
+    "critics": 96,
     "audience": null,
     "best": "Added by you."
    },
    "manual": true,
-   "rating": 5
+   "rating": 5,
+   "seasonsSeen": 5
   }
  }
 }
