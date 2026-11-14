@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T02:42:54.487Z",
+ "updatedAt": "2026-11-14T02:43:42.322Z",
  "marks": {
   "abbott-elementary": {
    "at": "2026-11-14T00:14:28.640Z",
@@ -281,7 +281,7 @@
    }
   },
   "ozark": {
-   "at": "2026-11-13T16:00:00-08:00",
+   "at": "2026-11-14T02:43:40.695Z",
    "rating": 5,
    "state": "watched",
    "t": {
@@ -299,7 +299,8 @@
     "title": "Ozark",
     "type": "Series",
     "year": 2017
-   }
+   },
+   "seasonsSeen": 4
   },
   "reservation-dogs": {
    "at": "2026-11-13T23:42:24.831Z",
