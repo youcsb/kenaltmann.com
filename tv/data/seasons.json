@@ -49,13 +49,16 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2022
+     "year": 2022,
+     "critics": 96
     },
     {
      "n": 2,
-     "year": 2025
+     "year": 2025,
+     "critics": 99
     }
-   ]
+   ],
+   "checked": "2026-11-15"
   },
   "baby-reindeer": {
    "tvmaze": 52426,
@@ -120,6 +123,43 @@
     }
    ]
   },
+  "bosch": {
+   "tvmaze": 1216,
+   "title": "Bosch",
+   "total": 7,
+   "seasons": [
+    {
+     "n": 1,
+     "year": 2015,
+     "critics": 84
+    },
+    {
+     "n": 2,
+     "year": 2016
+    },
+    {
+     "n": 3,
+     "year": 2017
+    },
+    {
+     "n": 4,
+     "year": 2018
+    },
+    {
+     "n": 5,
+     "year": 2019
+    },
+    {
+     "n": 6,
+     "year": 2020
+    },
+    {
+     "n": 7,
+     "year": 2021
+    }
+   ],
+   "checked": "2026-11-15"
+  },
   "bosch-legacy": {
    "tvmaze": 60175,
    "title": "Bosch: Legacy",
@@ -127,17 +167,21 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2022
+     "year": 2022,
+     "critics": 100,
+     "audience": 90
     },
     {
      "n": 2,
-     "year": 2023
+     "year": 2023,
+     "critics": 100
     },
     {
      "n": 3,
      "year": 2025
     }
-   ]
+   ],
+   "checked": "2026-11-15"
   },
   "breaking-bad": {
    "tvmaze": 169,
@@ -179,13 +223,17 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2024
+     "year": 2024,
+     "critics": 93,
+     "audience": 93
     },
     {
      "n": 2,
-     "year": 2025
+     "year": 2025,
+     "critics": 97
     }
-   ]
+   ],
+   "checked": "2026-11-15"
   },
   "fargo": {
    "tvmaze": 32,
@@ -194,11 +242,13 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2014
+     "year": 2014,
+     "critics": 97
     },
     {
      "n": 2,
-     "year": 2015
+     "year": 2015,
+     "critics": 100
     },
     {
      "n": 3,
@@ -206,13 +256,16 @@
     },
     {
      "n": 4,
-     "year": 2020
+     "year": 2020,
+     "critics": 84
     },
     {
      "n": 5,
-     "year": 2023
+     "year": 2023,
+     "critics": 100
     }
-   ]
+   ],
+   "checked": "2026-11-15"
   },
   "fleabag": {
    "tvmaze": 16149,
@@ -310,13 +363,16 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2017
+     "year": 2017,
+     "critics": 96
     },
     {
      "n": 2,
-     "year": 2019
+     "year": 2019,
+     "critics": 99
     }
-   ]
+   ],
+   "checked": "2026-11-15"
   },
   "mr-inbetween": {
    "tvmaze": 34268,
@@ -325,17 +381,20 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2018
+     "year": 2018,
+     "critics": 90
     },
     {
      "n": 2,
-     "year": 2019
+     "year": 2019,
+     "critics": 100
     },
     {
      "n": 3,
      "year": 2021
     }
-   ]
+   ],
+   "checked": "2026-11-15"
   },
   "my-bad-monkey": {
    "tvmaze": 56778,
@@ -512,21 +571,27 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2022
+     "year": 2022,
+     "critics": 92
     },
     {
      "n": 2,
-     "year": 2023
+     "year": 2023,
+     "critics": 98
     },
     {
      "n": 3,
-     "year": 2025
+     "year": 2025,
+     "critics": 98,
+     "audience": 74
     },
     {
      "n": 4,
-     "year": 2026
+     "year": 2026,
+     "critics": 92
     }
-   ]
+   ],
+   "checked": "2026-11-15"
   },
   "reservation-dogs": {
    "tvmaze": 44909,
@@ -765,11 +830,13 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2022
+     "year": 2022,
+     "critics": 100
     },
     {
      "n": 2,
-     "year": 2023
+     "year": 2023,
+     "critics": 99
     },
     {
      "n": 3,
@@ -781,9 +848,11 @@
     },
     {
      "n": 5,
-     "year": 2026
+     "year": 2026,
+     "critics": 97
     }
-   ]
+   ],
+   "checked": "2026-11-15"
   },
   "the-body": {
    "tvmaze": 87480,

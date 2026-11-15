@@ -1,33 +1,6 @@
 {
  "games": [
   {
-   "channel": "CBS",
-   "id": "g3",
-   "league": "CFB",
-   "mine": false,
-   "note": "UCLA's rival on the road.",
-   "start": "2026-11-14T12:30:00-08:00",
-   "teams": "USC at Indiana"
-  },
-  {
-   "channel": "NBC",
-   "id": "g4",
-   "league": "CFB",
-   "mine": false,
-   "note": "",
-   "start": "2026-11-14T12:30:00-08:00",
-   "teams": "Boston College at Notre Dame"
-  },
-  {
-   "channel": "ESPN",
-   "id": "g5",
-   "league": "CFB",
-   "mine": false,
-   "note": "Saturday night window.",
-   "start": "2026-11-14T18:30:00-08:00",
-   "teams": "Texas Tech at Oklahoma State"
-  },
-  {
    "channel": "FOX",
    "id": "g6",
    "league": "NFL",
@@ -170,7 +143,7 @@
    "id": "g21",
    "league": "CFB",
    "mine": true,
-   "note": "Time and TV get set Sunday, Nov 15.",
+   "note": "Time and TV still to be announced.",
    "start": "2026-11-21",
    "tba": true,
    "teams": "UCLA at Michigan"
@@ -221,7 +194,7 @@
    "note": "Home game. TV not confirmed yet."
   }
  ],
- "note": "Daily refresh: season data for West Wing, Reservation Dogs, Only Murders and Ted Lasso; dropped Glass Onion and Fallout (watched).",
+ "note": "Daily refresh: added Bosch (2014); season scores for Fallout, Reacher, Andor, Fargo, The Bear, Mindhunter, Bosch: Legacy, Mr Inbetween.",
  "titles": [
   {
    "added": "2026-11-05",
@@ -583,7 +556,7 @@
     "character-study",
     "prestige"
    ],
-   "best": "Harry Bosch goes private in L.A. Smart, grounded detective drama with a perfect critics score.",
+   "best": "Harry Bosch goes private in L.A. A direct sequel to Bosch (2014), so start there if you haven't seen it.",
    "verified": true
   },
   {
@@ -655,7 +628,24 @@
    "best": "Added by you. Vince Vaughn as a demoted Florida Keys detective, from Bill Lawrence of Ted Lasso and Shrinking.",
    "manual": true,
    "verified": true
+  },
+  {
+   "id": "bosch",
+   "title": "Bosch",
+   "year": 2014,
+   "type": "Series",
+   "service": "Prime Video",
+   "critics": 97,
+   "audience": null,
+   "genre": "Drama",
+   "tags": [
+    "crime",
+    "character-study",
+    "prestige"
+   ],
+   "best": "Seven seasons of an LA homicide detective working season-long cases. Watch it before Bosch: Legacy, which picks up right where it ends.",
+   "verified": true
   }
  ],
- "updatedAt": "2026-11-14T05:55:00-08:00"
+ "updatedAt": "2026-11-15T05:55:00-08:00"
 }
