@@ -115,13 +115,16 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2024
+     "year": 2024,
+     "critics": 92
     },
     {
      "n": 2,
-     "year": 2026
+     "year": 2026,
+     "critics": 94
     }
-   ]
+   ],
+   "checked": "2026-11-16"
   },
   "bosch": {
    "tvmaze": 1216,
@@ -475,17 +478,21 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2024
+     "year": 2024,
+     "critics": 95,
+     "audience": 85
     },
     {
      "n": 2,
-     "year": 2025
+     "year": 2025,
+     "critics": 77
     },
     {
      "n": 3,
      "year": 2026
     }
-   ]
+   ],
+   "checked": "2026-11-16"
   },
   "only-murders": {
    "tvmaze": 48830,
@@ -556,13 +563,16 @@
    "seasons": [
     {
      "n": 1,
-     "year": 2022
+     "year": 2022,
+     "critics": 98
     },
     {
      "n": 2,
-     "year": 2024
+     "year": 2024,
+     "critics": 100
     }
-   ]
+   ],
+   "checked": "2026-11-16"
   },
   "reacher": {
    "tvmaze": 43031,
