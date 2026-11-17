@@ -1,43 +1,6 @@
 {
  "games": [
   {
-   "channel": "ESPN",
-   "id": "g10",
-   "league": "NFL",
-   "mine": false,
-   "note": "Monday Night Football.",
-   "start": "2026-11-16T17:15:00-08:00",
-   "teams": "Chargers at Ravens"
-  },
-  {
-   "channel": "Regional",
-   "id": "g11",
-   "league": "NBA",
-   "mine": true,
-   "note": "First of two games in Minnesota.",
-   "start": "2026-11-16T18:00:00-08:00",
-   "teams": "Trail Blazers at Timberwolves"
-  },
-  {
-   "channel": "BTN",
-   "id": "g12",
-   "league": "CBB",
-   "mine": true,
-   "note": "",
-   "start": "2026-11-16T19:00:00-08:00",
-   "teams": "Long Beach State at UCLA"
-  },
-  {
-   "channel": "NBC Sports Bay Area / Peacock",
-   "id": "g13",
-   "league": "NBA",
-   "mine": true,
-   "note": "Tip time not confirmed yet.",
-   "start": "2026-11-16",
-   "tba": true,
-   "teams": "Warriors at Pelicans"
-  },
-  {
    "channel": "NBC / Peacock",
    "id": "g14",
    "league": "NBA",
@@ -103,13 +66,12 @@
    "teams": "Warriors at Grizzlies"
   },
   {
-   "channel": "TBA",
+   "channel": "CBS",
    "id": "g21",
    "league": "CFB",
    "mine": true,
-   "note": "Time and TV still to be announced.",
-   "start": "2026-11-21",
-   "tba": true,
+   "note": "UCLA is 10-0. Senior Day at the Big House.",
+   "start": "2026-11-21T12:30:00-08:00",
    "teams": "UCLA at Michigan"
   },
   {
@@ -158,7 +120,7 @@
    "note": "Home game. TV not confirmed yet."
   }
  ],
- "note": "Daily refresh: season scores for Nobody Wants This, Pachinko and Black Doves.",
+ "note": "Daily refresh: UCLA at Michigan set for CBS; season scores for What We Do in the Shadows.",
  "titles": [
   {
    "added": "2026-11-05",
@@ -285,7 +247,7 @@
   {
    "audience": null,
    "best": "Vampire roommates on Staten Island. Pure silly comedy, six seasons.",
-   "critics": 95,
+   "critics": 96,
    "genre": "Comedy",
    "id": "shadows",
    "service": "Hulu",
@@ -296,7 +258,7 @@
    ],
    "title": "What We Do in the Shadows",
    "type": "Series",
-   "verified": false,
+   "verified": true,
    "year": 2019,
    "url": "https://www.hulu.com/series/what-we-do-in-the-shadows-0b10c46a-12f0-4357-8a00-547057b49bac"
   },
@@ -611,5 +573,5 @@
    "verified": true
   }
  ],
- "updatedAt": "2026-11-16T05:50:00-08:00"
+ "updatedAt": "2026-11-17T05:50:00-08:00"
 }
