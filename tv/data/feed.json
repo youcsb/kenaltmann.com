@@ -1,31 +1,12 @@
 {
  "games": [
   {
-   "channel": "NBC / Peacock",
-   "id": "g14",
-   "league": "NBA",
-   "mine": true,
-   "note": "",
-   "start": "2026-11-17T17:00:00-08:00",
-   "teams": "Pistons at Spurs"
-  },
-  {
-   "channel": "Regional",
-   "id": "g15",
-   "league": "NBA",
-   "mine": true,
-   "note": "",
-   "start": "2026-11-17T18:00:00-08:00",
-   "teams": "Trail Blazers at Timberwolves"
-  },
-  {
    "channel": "ESPN",
    "id": "g16",
    "league": "NBA",
    "mine": true,
-   "note": "Tip time not confirmed yet.",
-   "start": "2026-11-18",
-   "tba": true,
+   "note": "",
+   "start": "2026-11-18T18:30:00-08:00",
    "teams": "Warriors at Mavericks"
   },
   {
@@ -56,13 +37,12 @@
    "teams": "Trail Blazers at Bucks"
   },
   {
-   "channel": "Regional (DAZN)",
+   "channel": "Check listing",
    "id": "g20",
    "league": "NBA",
    "mine": true,
-   "note": "Not on your services.",
-   "start": "2026-11-19",
-   "tba": true,
+   "note": "TV not announced yet.",
+   "start": "2026-11-19T17:00:00-08:00",
    "teams": "Warriors at Grizzlies"
   },
   {
@@ -120,7 +100,7 @@
    "note": "Home game. TV not confirmed yet."
   }
  ],
- "note": "Daily refresh: UCLA at Michigan set for CBS; season scores for What We Do in the Shadows.",
+ "note": "Daily refresh: added Furious (Hulu, 100%).",
  "titles": [
   {
    "added": "2026-11-05",
@@ -571,7 +551,24 @@
    ],
    "best": "Seven seasons of an LA homicide detective working season-long cases. Watch it before Bosch: Legacy, which picks up right where it ends.",
    "verified": true
+  },
+  {
+   "id": "furious",
+   "title": "Furious",
+   "year": 2026,
+   "type": "Series",
+   "service": "Hulu",
+   "critics": 100,
+   "audience": null,
+   "genre": "Thriller",
+   "tags": [
+    "crime",
+    "thriller",
+    "dark"
+   ],
+   "best": "Emmy Rossum as an FBI agent hunting a serial killer. A taut eight-week crime thriller with a perfect critics score, renewed for Season 2.",
+   "verified": true
   }
  ],
- "updatedAt": "2026-11-17T05:50:00-08:00"
+ "updatedAt": "2026-11-18T05:50:00-08:00"
 }
