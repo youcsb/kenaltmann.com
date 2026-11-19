@@ -1,24 +1,6 @@
 {
  "games": [
   {
-   "channel": "ESPN",
-   "id": "g16",
-   "league": "NBA",
-   "mine": true,
-   "note": "",
-   "start": "2026-11-18T18:30:00-08:00",
-   "teams": "Warriors at Mavericks"
-  },
-  {
-   "channel": "BTN",
-   "id": "g17",
-   "league": "CBB",
-   "mine": true,
-   "note": "",
-   "start": "2026-11-18T19:30:00-08:00",
-   "teams": "Cal State Fullerton at UCLA"
-  },
-  {
    "channel": "Regional (DAZN)",
    "id": "g18",
    "league": "NBA",
@@ -100,7 +82,7 @@
    "note": "Home game. TV not confirmed yet."
   }
  ],
- "note": "Daily refresh: added Furious (Hulu, 100%).",
+ "note": "Daily refresh: no lineup changes; games updated.",
  "titles": [
   {
    "added": "2026-11-05",
@@ -570,5 +552,5 @@
    "verified": true
   }
  ],
- "updatedAt": "2026-11-18T05:50:00-08:00"
+ "updatedAt": "2026-11-19T05:50:00-08:00"
 }
