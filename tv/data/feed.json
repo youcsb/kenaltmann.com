@@ -1,33 +1,6 @@
 {
  "games": [
   {
-   "channel": "Regional (DAZN)",
-   "id": "g18",
-   "league": "NBA",
-   "mine": true,
-   "note": "Not on your services.",
-   "start": "2026-11-19T17:00:00-08:00",
-   "teams": "Clippers at Spurs"
-  },
-  {
-   "channel": "Regional",
-   "id": "g19",
-   "league": "NBA",
-   "mine": true,
-   "note": "",
-   "start": "2026-11-19T18:00:00-08:00",
-   "teams": "Trail Blazers at Bucks"
-  },
-  {
-   "channel": "Check listing",
-   "id": "g20",
-   "league": "NBA",
-   "mine": true,
-   "note": "TV not announced yet.",
-   "start": "2026-11-19T17:00:00-08:00",
-   "teams": "Warriors at Grizzlies"
-  },
-  {
    "channel": "CBS",
    "id": "g21",
    "league": "CFB",
@@ -44,15 +17,6 @@
    "note": "Streaming-only on B1G+.",
    "start": "2026-11-22T16:00:00-08:00",
    "teams": "Delaware at UCLA"
-  },
-  {
-   "id": "g23",
-   "league": "NFL",
-   "teams": "Colts at Texans",
-   "start": "2026-11-19T17:15:00-08:00",
-   "channel": "Prime Video",
-   "mine": false,
-   "note": "Thursday Night Football."
   },
   {
    "id": "g24",
@@ -82,7 +46,7 @@
    "note": "Home game. TV not confirmed yet."
   }
  ],
- "note": "Daily refresh: no lineup changes; games updated.",
+ "note": "Daily refresh: no lineup changes; checked Netflix departures (none in your lineup).",
  "titles": [
   {
    "added": "2026-11-05",
@@ -552,5 +516,5 @@
    "verified": true
   }
  ],
- "updatedAt": "2026-11-19T05:50:00-08:00"
+ "updatedAt": "2026-11-20T05:50:00-08:00"
 }
