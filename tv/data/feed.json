@@ -44,9 +44,110 @@
    "channel": "Check listing",
    "mine": true,
    "note": "Home game. TV not confirmed yet."
+  },
+  {
+   "id": "g27",
+   "league": "NFL",
+   "teams": "Packers at Rams",
+   "start": "2026-11-25T17:00:00-08:00",
+   "channel": "Netflix",
+   "mine": false,
+   "note": "Thanksgiving Eve."
+  },
+  {
+   "id": "g28",
+   "league": "NBA",
+   "teams": "Spurs at Trail Blazers",
+   "start": "2026-11-25T19:00:00-08:00",
+   "channel": "ESPN",
+   "mine": true,
+   "note": "Two of your teams. NBA Cup."
+  },
+  {
+   "id": "g29",
+   "league": "NBA",
+   "teams": "Kings at Warriors",
+   "start": "2026-11-25",
+   "tba": true,
+   "channel": "Check listing",
+   "mine": true,
+   "note": "NBA Cup. Time not set yet."
+  },
+  {
+   "id": "g30",
+   "league": "NFL",
+   "teams": "Bears at Lions",
+   "start": "2026-11-26T10:00:00-08:00",
+   "channel": "CBS",
+   "mine": false,
+   "note": "Thanksgiving."
+  },
+  {
+   "id": "g31",
+   "league": "NFL",
+   "teams": "Eagles at Cowboys",
+   "start": "2026-11-26T13:30:00-08:00",
+   "channel": "FOX",
+   "mine": false,
+   "note": "Thanksgiving."
+  },
+  {
+   "id": "g32",
+   "league": "NFL",
+   "teams": "Chiefs at Bills",
+   "start": "2026-11-26T17:20:00-08:00",
+   "channel": "NBC",
+   "mine": false,
+   "note": "Thanksgiving night."
+  },
+  {
+   "id": "g33",
+   "league": "NFL",
+   "teams": "Broncos at Steelers",
+   "start": "2026-11-27T12:00:00-08:00",
+   "channel": "Prime Video",
+   "mine": false,
+   "note": "Black Friday."
+  },
+  {
+   "id": "g34",
+   "league": "NBA",
+   "teams": "Warriors at Trail Blazers",
+   "start": "2026-11-27T18:30:00-08:00",
+   "channel": "Regional",
+   "mine": true,
+   "note": "Two of your teams. NBA Cup."
+  },
+  {
+   "id": "g35",
+   "league": "NBA",
+   "teams": "Lakers at Spurs",
+   "start": "2026-11-27T18:30:00-08:00",
+   "channel": "Prime Video",
+   "mine": true,
+   "note": ""
+  },
+  {
+   "id": "g36",
+   "league": "CFB",
+   "teams": "USC at UCLA",
+   "start": "2026-11-28",
+   "tba": true,
+   "channel": "Check listing",
+   "mine": true,
+   "note": "Rivalry game at the Rose Bowl. Time not set yet."
+  },
+  {
+   "id": "g37",
+   "league": "NFL",
+   "teams": "Seahawks at 49ers",
+   "start": "2026-11-29T13:25:00-08:00",
+   "channel": "FOX",
+   "mine": true,
+   "note": "First game back from the bye."
   }
  ],
- "note": "Daily refresh: no lineup changes; checked Netflix departures (none in your lineup).",
+ "note": "Daily refresh: Thanksgiving week games added.",
  "titles": [
   {
    "added": "2026-11-05",
@@ -516,5 +617,5 @@
    "verified": true
   }
  ],
- "updatedAt": "2026-11-20T05:50:00-08:00"
+ "updatedAt": "2026-11-21T05:50:00-08:00"
 }
