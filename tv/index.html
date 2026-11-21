@@ -214,7 +214,7 @@ footer{color:var(--dim);font-size:12px;max-width:80ch;padding-bottom:40px}
 <script>
 
 const SVC={"Netflix":{c:"--netflix",s:"NETFLIX",u:"https://www.netflix.com/search?q="},"Prime Video":{c:"--prime",s:"PRIME",u:"https://www.amazon.com/s?i=instant-video&k="},"Disney+":{c:"--disney",s:"DISNEY+",u:"https://www.disneyplus.com/search?q="},"Hulu":{c:"--hulu",s:"HULU",u:"https://www.hulu.com/search?q="},"Apple TV":{c:"--apple",s:"tv",u:"https://tv.apple.com/search?term="}};
-const ON_PLAN=/^(CBS|NBC|FOX|ABC|ESPN|ESPN2|FS1|BTN|TNT|NBA TV|Prime Video|NBC \/ Peacock|SEC Network)$/;
+const ON_PLAN=/^(CBS|NBC|FOX|ABC|ESPN|ESPN2|ESPN\+|FS1|BTN|TNT|NBA TV|Prime Video|Netflix|Hulu|Disney\+|Apple TV|NBC \/ Peacock|SEC Network)$/;
 const TOM='<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="9" r="6" fill="#FF5A3C"/><path d="M6 3.5c1-.8 3-.8 4 0" stroke="#46D27F" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>';
 const state={feed:null,marks:{},art:{},svc:new Set(Object.keys(SVC)),open:null};
 try{const s=JSON.parse(localStorage.getItem("ninety-svc")||"null");if(Array.isArray(s)&&s.length)state.svc=new Set(s)}catch(e){}
@@ -552,7 +552,7 @@ const actions={
   "forget-token":()=>{token=null;try{localStorage.removeItem(TOKEN_KEY)}catch(e){}updateSyncUI();closeSheet()}
 };
 /* Self-update: when a newer app version is published, reload once with a cache-busting URL. */
-const APP_VERSION="2026-11-14-ask";
+const APP_VERSION="2026-11-21-onplan";
 async function checkUpdate(){try{const v=await fetch("data/version.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json());
   if(v.app&&v.app!==APP_VERSION&&new URLSearchParams(location.search).get("v")!==v.app){location.replace(location.pathname+"?v="+encodeURIComponent(v.app));return true}}catch(e){}return false}
 async function load(){
