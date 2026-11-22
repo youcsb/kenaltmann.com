@@ -1,15 +1,6 @@
 {
  "games": [
   {
-   "channel": "CBS",
-   "id": "g21",
-   "league": "CFB",
-   "mine": true,
-   "note": "UCLA is 10-0. Senior Day at the Big House.",
-   "start": "2026-11-21T12:30:00-08:00",
-   "teams": "UCLA at Michigan"
-  },
-  {
    "channel": "B1G+",
    "id": "g22",
    "league": "CBB",
@@ -17,15 +8,6 @@
    "note": "Streaming-only on B1G+.",
    "start": "2026-11-22T16:00:00-08:00",
    "teams": "Delaware at UCLA"
-  },
-  {
-   "id": "g24",
-   "league": "NBA",
-   "teams": "Pelicans at Spurs",
-   "start": "2026-11-21T17:00:00-08:00",
-   "channel": "Regional (DAZN)",
-   "mine": true,
-   "note": "Not on your services."
   },
   {
    "id": "g25",
@@ -145,9 +127,28 @@
    "channel": "FOX",
    "mine": true,
    "note": "First game back from the bye."
+  },
+  {
+   "id": "g38",
+   "league": "NFL",
+   "teams": "Vikings vs. 49ers (Mexico City)",
+   "start": "2026-11-22",
+   "tba": true,
+   "channel": "NBC / Peacock",
+   "mine": false,
+   "note": "Sunday Night Football."
+  },
+  {
+   "id": "g39",
+   "league": "NFL",
+   "teams": "Raiders at Browns",
+   "start": "2026-11-29T17:20:00-08:00",
+   "channel": "NBC / Peacock",
+   "mine": false,
+   "note": "Flexed to Sunday Night Football."
   }
  ],
- "note": "Daily refresh: Thanksgiving week games added.",
+ "note": "Daily refresh: games updated.",
  "titles": [
   {
    "added": "2026-11-05",
@@ -617,5 +618,5 @@
    "verified": true
   }
  ],
- "updatedAt": "2026-11-21T05:50:00-08:00"
+ "updatedAt": "2026-11-22T05:50:00-08:00"
 }
