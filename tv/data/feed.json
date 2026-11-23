@@ -1,33 +1,6 @@
 {
  "games": [
   {
-   "channel": "B1G+",
-   "id": "g22",
-   "league": "CBB",
-   "mine": true,
-   "note": "Streaming-only on B1G+.",
-   "start": "2026-11-22T16:00:00-08:00",
-   "teams": "Delaware at UCLA"
-  },
-  {
-   "id": "g25",
-   "league": "NFL",
-   "teams": "Steelers at Eagles",
-   "start": "2026-11-22T10:00:00-08:00",
-   "channel": "CBS",
-   "mine": false,
-   "note": "Moved to the early window."
-  },
-  {
-   "id": "g26",
-   "league": "NBA",
-   "teams": "Celtics at Warriors",
-   "start": "2026-11-22T17:30:00-08:00",
-   "channel": "Check listing",
-   "mine": true,
-   "note": "Home game. TV not confirmed yet."
-  },
-  {
    "id": "g27",
    "league": "NFL",
    "teams": "Packers at Rams",
@@ -113,11 +86,10 @@
    "id": "g36",
    "league": "CFB",
    "teams": "USC at UCLA",
-   "start": "2026-11-28",
-   "tba": true,
-   "channel": "Check listing",
+   "start": "2026-11-28T12:30:00-08:00",
+   "channel": "CBS",
    "mine": true,
-   "note": "Rivalry game at the Rose Bowl. Time not set yet."
+   "note": "Crosstown rivalry at the Rose Bowl."
   },
   {
    "id": "g37",
@@ -129,16 +101,6 @@
    "note": "First game back from the bye."
   },
   {
-   "id": "g38",
-   "league": "NFL",
-   "teams": "Vikings vs. 49ers (Mexico City)",
-   "start": "2026-11-22",
-   "tba": true,
-   "channel": "NBC / Peacock",
-   "mine": false,
-   "note": "Sunday Night Football."
-  },
-  {
    "id": "g39",
    "league": "NFL",
    "teams": "Raiders at Browns",
@@ -146,9 +108,18 @@
    "channel": "NBC / Peacock",
    "mine": false,
    "note": "Flexed to Sunday Night Football."
+  },
+  {
+   "id": "g40",
+   "league": "NFL",
+   "teams": "Bengals at Commanders",
+   "start": "2026-11-23T17:15:00-08:00",
+   "channel": "ESPN",
+   "mine": false,
+   "note": "Monday Night Football (also on ABC)."
   }
  ],
- "note": "Daily refresh: games updated.",
+ "note": "Daily refresh: USC at UCLA set for CBS; MNF added.",
  "titles": [
   {
    "added": "2026-11-05",
@@ -618,5 +589,5 @@
    "verified": true
   }
  ],
- "updatedAt": "2026-11-22T05:50:00-08:00"
+ "updatedAt": "2026-11-23T05:50:00-08:00"
 }
