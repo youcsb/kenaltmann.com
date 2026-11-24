@@ -22,11 +22,10 @@
    "id": "g29",
    "league": "NBA",
    "teams": "Kings at Warriors",
-   "start": "2026-11-25",
-   "tba": true,
-   "channel": "Check listing",
+   "start": "2026-11-25T19:00:00-08:00",
+   "channel": "Regional",
    "mine": true,
-   "note": "NBA Cup. Time not set yet."
+   "note": "NBA Cup at Chase Center. Likely NBC Sports Bay Area."
   },
   {
    "id": "g30",
@@ -108,18 +107,9 @@
    "channel": "NBC / Peacock",
    "mine": false,
    "note": "Flexed to Sunday Night Football."
-  },
-  {
-   "id": "g40",
-   "league": "NFL",
-   "teams": "Bengals at Commanders",
-   "start": "2026-11-23T17:15:00-08:00",
-   "channel": "ESPN",
-   "mine": false,
-   "note": "Monday Night Football (also on ABC)."
   }
  ],
- "note": "Daily refresh: USC at UCLA set for CBS; MNF added.",
+ "note": "Daily refresh: Kings at Warriors time set.",
  "titles": [
   {
    "added": "2026-11-05",
@@ -589,5 +579,5 @@
    "verified": true
   }
  ],
- "updatedAt": "2026-11-23T05:50:00-08:00"
+ "updatedAt": "2026-11-24T05:50:00-08:00"
 }
